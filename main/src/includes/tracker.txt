@@ -1,0 +1,47 @@
+Race -> get random race or user input
+Age -> get age
+Gender -> get array of pronouns
+    Gender->Object must be passed to Sentence Generator, to get array of pronouns
+
+Profile -> get face
+
+NpcGenController
+
+
+
+
+
+resources
+
+
+
+
+We make a new_npc
+it gets all the classes as properties
+the "sub" classes will genreate their own properties
+new_npc therefore will be an Object made of Classes
+accesing the subclass getters will return the value of the property
+we use these to make a sentence.
+
+class DndRngNpc
+{
+    get face -> get eyes;
+                get nose;
+                get mouth;
+                get teeth;
+                get chin;
+    
+    get body -> get bodysize;
+                get bodyshape;
+                get bodytype;
+    
+    get outfit -> get prosperity -> get outfit based on prosperity
+
+    get age
+    get race -> get race;
+                get heritage;
+    
+    get homebrew -> from INPUT,
+
+    get name -> get THIS race -> get raceclass.
+}
