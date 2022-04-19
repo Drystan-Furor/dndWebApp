@@ -1,0 +1,586 @@
+* {
+    margin-top: 0;
+    /*margin: 0;*/
+    /*padding: 0;*/
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    /*--top for load box--*/
+    font-size: 100%;
+    font-family: "Courier New", monospace;
+    background-color: #45CEF7;
+    color: black;
+    align-items: center;
+}
+
+
+/* adminmenu -----------------------------------------------------------------------------*/
+
+.adminmenucontainer {
+    position: relative;
+}
+
+.adminmenu {
+    position: absolute;
+    top: 40px;
+    right: 16px;
+    padding: 15px;
+    border: 3px solid #EE8600;
+    border-radius: 50px;
+    font-size: 80%;
+    text-align: center;
+    color: #45CEF7;
+    background-color: rgb(15, 15, 15);
+}
+
+.adminmenu a:link,
+.adminmenu a:visited {
+    color: rgb(248, 4, 4);
+    text-decoration: none;
+}
+
+
+/* navigatie menu ---------------------------------------------------------------------------*/
+
+.navmenucontainer {
+    position: relative;
+}
+
+.navmenu {
+    position: absolute;
+    background-color: #767676;
+    color: white;
+    padding: 1px 5px 1px 5px;
+    border-radius: 0 0 10px 10px;
+    font-size: 40%;
+    font-family: Verdana, monospace;
+    text-align: center;
+    border: 3px solid #EE8600;
+    display: block;
+    top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    width: 100%;
+}
+
+.navmenu a:link,
+.navmenu a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.navmenu a:hover,
+.navmenu a:active {
+    text-decoration: underline;
+    color: rgb(248, 4, 4);
+}
+
+
+/*----------------logoutcontainer----------*/
+
+.logoutcontainer {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: 16px;
+    width: 10%;
+    font-family: Copperplate, Fantasy, serif;
+    /*text-shadow: 2px 2px;*/
+    font-size: 80%;
+    color: #45CEF7;
+    text-align: center;
+    background-color: rgb(15, 15, 15);
+    border: 3px solid #EE8600;
+    border-radius: 50px;
+    margin-bottom: 1px;
+}
+
+.logoutcontainer a:link,
+.logoutcontainer a:visited {
+    color: #d41e1e;
+    text-decoration: none;
+}
+
+
+/* HOME.php -------------------*/
+
+.rngcenter {
+    font-family: Copperplate, Fantasy, serif;
+    font-weight: bold;
+    /*text-shadow: 2px 2px;*/
+    font-size: 480%;
+    color: #d41e1e;
+    text-align: center;
+    background-color: rgb(15, 15, 15);
+    border: 15px solid rgb(15, 15, 15);
+    border-radius: 0 0 0 0;
+    margin-bottom: -10px;
+    padding-top: 20px;
+}
+
+.whitetext {
+    color: white;
+    font-size: 80%;
+    font-weight: lighter;
+}
+
+.whitespan {
+    color: white;
+    text-shadow: 1px 1px #EE8600;
+}
+
+.redtext {
+    color: #d41e1e;
+    font-family: Copperplate, Fantasy, serif;
+    text-shadow: 1px 1px black;
+}
+
+.rngh2 {
+    font-family: "Courier New", monospace;
+    color: #767676;
+    text-align: center;
+}
+
+
+/*--------------------------------------------------------------CENTER*/
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-family: Copperplate, Fantasy, serif;
+    /*text-shadow: 2px 2px;*/
+    font-size: 200%;
+    color: #d41e1e;
+    text-align: center;
+    background-color: rgb(15, 15, 15);
+    border: 3px solid #EE8600;
+    border-radius: 50px;
+    margin-bottom: 1px;
+    border-radius: 50px;
+}
+
+.centeredpar {
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: absolute;
+    padding-bottom: 10%;
+    margin-bottom: 10%;
+    margin-top: 20px;
+    width: 90%;
+    font-size: 80%;
+    background-color: white;
+    border: 3px solid #EE8600;
+    border-radius: 5px;
+}
+
+.centeredblog {
+    text-align: center;
+    background-color: white;
+    border: 3px solid #EE8600;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.centertext {
+    text-align: center;
+}
+
+.centertext a:link {
+    color: rgb(248, 4, 4);
+}
+
+.centertext a:visited {
+    color: #EE8600;
+}
+
+
+/*--------------------------LOGIN------------------------*/
+
+.login {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-family: Copperplate, Fantasy, serif;
+    /*text-shadow: 2px 2px;*/
+    font-size: 200%;
+    color: #d41e1e;
+    text-align: center;
+    background-color: rgb(15, 15, 15);
+    border: 3px solid #EE8600;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    margin-top: 10%;
+    border-radius: 50px;
+}
+
+.loginform {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    border: 3px solid #767676;
+    border-radius: 50px;
+    font-size: 110%;
+    text-align: center;
+    color: #45CEF7;
+    left: 0;
+    bottom: 0;
+}
+
+.loginform::placeholder {
+    color: #45CEF7;
+}
+
+
+/*-----------------------dnd races---------------------------*/
+
+.dndraces,
+.dndraces a:link,
+.dndraces a:visited {
+    text-align: center;
+    color: #EE8600;
+    text-decoration: none;
+}
+
+
+/*---------------------------------------------------summarize---------*/
+
+.summarize {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 50px;
+}
+
+
+/*------------------------------------------user input race-------------------------*/
+
+.setcommonrace {
+    background-color: black;
+    color: rgb(248, 4, 4);
+    padding: 5px 0 5px 5px;
+    font-family: Copperplate, Fantasy, serif;
+    border: 3px solid #EE8600;
+    border-radius: 50px;
+    font-size: 120%;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 10%;
+    cursor: pointer;
+    margin-bottom: 1%;
+}
+
+
+/*------------------------------------------user input race form------------------------------------*/
+
+#commonrace {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    border: 3px solid #767676;
+    border-radius: 50px;
+    font-size: 110%;
+    text-align: center;
+    color: #45CEF7;
+    left: 0;
+    bottom: 0;
+}
+
+#commonrace::placeholder {
+    color: #45CEF7;
+}
+
+
+/*-----------------------result printer-----------------------------------*/
+
+.generatedcode {
+    display: block;
+    border: 2px solid #EE8600;
+    border-radius: 50px 50px 0 0;
+    background-color: white;
+    padding: 2%;
+    margin-bottom: -5px;
+}
+
+
+/*--------------------------buttons-------------*/
+
+.submitbutton {
+    background-color: #767676;
+    color: rgb(9, 129, 35);
+    padding: 3px;
+    font-family: Copperplate, Fantasy, serif;
+    border: 3px solid rgb(9, 129, 35);
+    border-radius: 50px;
+    font-size: 120%;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    cursor: pointer;
+    margin-top: 3px;
+    margin-bottom: 3%;
+}
+
+
+/*--------------------adminpages-----------------*/
+
+.adminpages-container {
+    position: relative;
+}
+
+.adminpages {
+    margin-left: 5%;
+    margin-right: 5%;
+    position: absolute;
+    padding-bottom: 10%;
+    margin-bottom: 10%;
+    margin-top: 20px;
+    width: 90%;
+    font-size: 80%;
+    background-color: white;
+    border: 3px solid #EE8600;
+    border-radius: 5px;
+}
+
+.adminpages table tr {
+    border: 1px solid #EE8600;
+    width: 100%;
+}
+
+.adminpages table td {
+    border: 1px solid #EE8600;
+}
+
+
+/* footer -----------------------------------------------------------------------------*/
+
+.footer-container {
+    position: relative;
+    bottom: -webkit-calc(-100% + 4px);
+}
+
+
+/*
+footer {
+    background-color: #767676;
+    color: #45CEF7;
+    padding: 5px 0 15px 15px;
+    border: 1px solid white;
+    border-radius: 50px 50px 0 0;
+    font-size: 60%;
+    text-align: center;
+    left: 0;
+    width: 100%;
+    margin: 10% 0 0 0;
+    position: fixed;
+    bottom: 0px;
+}
+
+footer a:link,
+footer a:visited {
+    color: rgb(248, 4, 4);
+    text-decoration: none;
+}
+*/
+
+footer {
+    background-color: rgb(15, 15, 15);
+    color: rgb(248, 4, 4);
+    padding: 5px 0 15px 15px;
+    border: 1px solid white;
+    border-radius: 50px 50px 0 0;
+    font-size: 80%;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0 0 0 0;
+}
+
+footer a:link,
+footer a:visited {
+    color: rgb(248, 4, 4);
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+
+
+/*-----LOADING BAR----------------------------------------------------*/
+
+
+/*-------------------------------------------------------LOAD BOX*/
+
+.generateloader {
+    font-family: Copperplate, Fantasy, serif;
+    font-weight: bold;
+    /*text-shadow: 2px 2px;*/
+    font-size: 200%;
+    color: #d41e1e;
+    text-align: center;
+    background-color: rgb(15, 15, 15);
+    border: 15px solid rgb(15, 15, 15);
+    border-radius: 50px 50px 50px 50px;
+    padding: 0 0 50px 0;
+    margin: 0 20% -50px 20%;
+}
+
+
+/*
+background-color: rgb(15, 15, 15);
+    color: rgb(248, 4, 4);
+*/
+
+.loading-box {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 40%;
+    height: 30px;
+    border-radius: 50px;
+    border: 3px solid #EE8600;
+    overflow: hidden;
+    background: #767676;
+    margin: auto;
+}
+
+.loader {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50px;
+    background: linear-gradient(45deg, white, rgb(248, 4, 4));
+    left: 0%;
+}
+
+.loader {
+    left: -100%;
+    animation: load 3s linear infinite;
+}
+
+@keyframes load {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+
+/*-------------------------------collapsible-----------------------------------------------------------*/
+
+.wrap-collabsible {
+    margin-bottom: 1.2rem;
+}
+
+
+/* set the checkbox element to display: none. 
+The checkbox will be invisible and its label will be used instead to check or uncheck it.: */
+
+.wrap-collabsible input[type='checkbox'] {
+    display: none;
+}
+
+
+/* default label */
+
+.lbl-toggle {
+    display: block;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+    color: #DFEBFC;
+    background-color: #EE8600;
+    cursor: pointer;
+    border-radius: 0 0 50px 50px;
+    transition: all 0.25s ease-out;
+}
+
+.lbl-toggle:hover {
+    color: rgb(15, 15, 15);
+}
+
+
+/* small arrow:  */
+
+.lbl-toggle::before {
+    content: ' ';
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid currentColor;
+    vertical-align: middle;
+    margin-right: .7rem;
+    transform: translateY(-2px);
+    transition: transform .2s ease-out;
+}
+
+
+/*  use of currentColor variable:  triangle == color label’s text.
+basic styles to the inner content:  */
+
+.collapsible-content .content-inner {
+    background: #26282A;
+    color: #EE8600;
+    border-bottom: 1px solid #EE8600;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: .5rem 1rem;
+    border: 2px solid #EE8600;
+}
+
+
+/*   
+ default, collapsible-content div max-height == 0px, making it completely hidden: */
+
+.collapsible-content {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .25s ease-in-out;
+}
+
+
+/*adjacent sibling selector (+) to select our content div when the checkbox is checked: */
+
+.toggle:checked+.lbl-toggle+.collapsible-content {
+    max-height: 100vh;
+}
+
+
+/*  rotate triangle 
+ when the collapsible is expanded */
+
+.toggle:checked+.lbl-toggle::before {
+    transform: rotate(90deg) translateX(-3px);
+}
+
+.toggle:checked+.lbl-toggle {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+/*--------------------------collapsible 1----------------------------------------------*/
