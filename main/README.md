@@ -1,5 +1,3 @@
-# dndWebApp
- Dnd-Rng-WebApp
 ## Webserver
 Stel de document root van MAMP in op de /public map.
 
