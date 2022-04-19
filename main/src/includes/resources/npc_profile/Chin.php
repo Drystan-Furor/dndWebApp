@@ -43,6 +43,7 @@ class Chin
      * Build or choose specific arrray. Select random value string
      * 
      * @param $dndrace this race
+     * @param $new_npc the male/female nouns
      * 
      * @return chin
      */

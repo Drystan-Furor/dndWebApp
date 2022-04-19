@@ -28,8 +28,8 @@ class Race
     {
         $this->dndrace = Homebrew::setHomebrew();
         $this->raceorigin = self::setHeritage();
-        $this->racesArray = self::raceArray();
-        $this->racesArray = self::updateRaceArray($this->dndrace, $this->racesArray);
+        $this->racesBaseArray = self::raceArray();
+        $this->racesArray = self::_updateRaceArray($this->dndrace, $this->racesBaseArray);
     }
 
 
@@ -74,16 +74,15 @@ class Race
      * if input === "Drow" then != homebrew
      * add Drow to Race Array, logically after cleaning because array is RETURNED
      * 
-     * @param $dndrace    == value to be checked IF == DROW
-     * @param $array == array of races
+     * @param $dndrace == value to be checked IF == DROW
+     * @param $array   == array of races
      * 
      * @return $racesArray push raceArray
      */
-    private function updateRaceArray($dndrace, $array)
+    private function _updateRaceArray($dndrace, $array)
     {
         if ($dndrace == "drow" || $dndrace == "Drow") {
-            $this->racesArray[] = "Drow";
-            $array = $this->racesArray;
+            $array[] = "Drow";
             return $array;
         }
         return $array;

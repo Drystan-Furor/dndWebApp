@@ -1,5 +1,5 @@
 ## Webserver
-run you localhost on ../main/public
+run your localhost on ../main/public
 
 ## Database
 There is a database connected

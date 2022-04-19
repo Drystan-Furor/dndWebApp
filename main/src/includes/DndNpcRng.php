@@ -73,8 +73,7 @@ class DndNpcRng
         //--- here it gets exciting
         $this->race = new Race();
         $this->raceorigin = $this->race->getRaceorigin();
-        $this->raceArray = $this->race->getRaceArray();
-        //$this->raceArray = $this->race->updateRaceArray($this->race->getRace(), $this->raceArray);
+        $this->raceArray = $this->race->getRaceArray(); //passed drow check
         $this->dndrace = $this->race->getRace();
 
         $this->age = new Age($this->dndrace);
@@ -93,7 +92,7 @@ class DndNpcRng
         // -> explore to make users enter their own name.
         //pass object to class method, allows to pass multiple properties
         // pass race to Name so it can sort what race naming class should be calles
-        $this->name = new Name($this->race, $this->new_npc);
+        $this->name = new Name($this->race, $this->new_npc, $this->raceArray);
         $this->firstname = $this->name->getFirstname();
         $this->lastname = $this->name->getLastname();
         $this->nickname = $this->name->getNickname();
@@ -102,9 +101,9 @@ class DndNpcRng
 
 
         //body {also public method}
-        $this->body = new BodiesGenerator($this->new_npc);
+        $this->body = new BodiesGenerator($this->dndrace, $this->new_npc);
         //---body
-        $this->bodySize = $this->body->getBodySize();
+        $this->size = $this->body->getBodySize();
         $this->body = $this->body->getBody();
 
 
@@ -176,7 +175,7 @@ class DndNpcRng
         A medium sized female Drow Druid thats about 46 years old, who looks priviliged.
         {bodysize}   {noun}{race}{class}          {age}           {prosperity intro}
         */
-        $string .= "A " . $this->bodySize . " " .
+        $string .= "A " . $this->size . " " .
             $this->gender . " " .
             $this->dndrace  . " " . $this->npcClass
             . " thats about " . $this->age . " years old, " .

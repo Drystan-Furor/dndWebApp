@@ -4,7 +4,10 @@
 //$new_rng_npc = new DndNpcRng();
 $dndrace = "Aarakocra";//$new_rng_npc->dndrace;
 $string = "Birdy";//$new_rng_npc->string;
-$homebrew = Homebrew::echoHomebrew($dndrace);
+//$new_rng_npc = new DndNpcRng();
+//$dndrace = $new_rng_npc->dndrace;
+//$string = $new_rng_npc->string;
+$homebrew = Homebrew::echoHomebrew($dndrace, Race::raceArray());
 ?>
 
 
@@ -22,11 +25,30 @@ $homebrew = Homebrew::echoHomebrew($dndrace);
                 $new_rng_npc = new DndNpcRng();
                 $dndrace = $new_rng_npc->dndrace;
                 $string = $new_rng_npc->string;
-                $homebrew = Homebrew::echoHomebrew($dndrace);
+                $homebrew = Homebrew::echoHomebrew($dndrace, $new_rng_npc->raceArray);
             } ?>
             <?php echo $homebrew ?><br>
             <b><?php echo $string; ?></b>
+            <b><?php //var_dump(!is_null($new_rng_npc->raceArray));?></b>
+            
         </p>
     </form>
 </div>
 
+<!-- here we create foreach of array of races -->
+<?php 
+$i = $i + 1; //the ID makes Javascript correspond to the correct collapsible
+$label = "All DnD Races";
+$collapsibleContent = '<div class="dndraces">'; //empty the string
+
+
+
+foreach ($new_rng_npc->raceArray as $key => $dndrace) {
+    $collapsibleContent .= '<a href="https://www.dndbeyond.com/races">
+                        <b> ' . $dndrace . '</a>, </b>
+                        ';
+}
+$collapsibleContent .= '</div>';
+?>
+
+<?php require 'collapsible.php' ?>

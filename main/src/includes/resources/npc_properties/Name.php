@@ -27,9 +27,9 @@ class Name extends Race
      * @param $race   == dndrace
      * @param $origin == race origin / hertiage 
      */
-    public function __construct($dndrace, $new_npc)
+    public function __construct($dndrace, $new_npc, $array)
     {
-        $this->biography = self::_generateName($dndrace, $new_npc);
+        $this->biography = self::_generateName($dndrace, $new_npc, $array);
     } //object name exists
 
     
@@ -43,10 +43,10 @@ class Name extends Race
      * 
      * @return raceClass()
      */
-    private function _generateName($dndrace, $new_npc) 
+    private function _generateName($dndrace, $new_npc, $array) 
     {
         //address the exceptions of races first
-        if (Homebrew::isHomebrew($dndrace->getRace()) == true) {
+        if (Homebrew::isHomebrew($dndrace->getRace(), $array) == true) {
             $raceName = Race::setHeritage(); 
             //Homebrews get a RNG origin to generate names
         } else {

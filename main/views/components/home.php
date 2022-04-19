@@ -37,20 +37,5 @@ $collapsibleContent = '<p id="thisisit" class="centertext">
 
 <?php require 'commonraceform.php' ?>
 
-<!-- here we create foreach of array of races -->
-<?php 
-$i = $i + 1; //the ID makes Javascript correspond to the correct collapsible
-$label = "All DnD Races";
-$collapsibleContent = '<div class="dndraces">'; //empty the string
-
-foreach (Race::raceArray() as $key => $dndrace) {
-    $collapsibleContent .= '<a href="https://www.dndbeyond.com/races">
-                        <b> ' . $dndrace . '</a>, </b>
-                        ';
-}
-$collapsibleContent .= '</div>';
-?>
-
-<?php require 'collapsible.php' ?>
 
 <?php require 'summarize.php' ?>

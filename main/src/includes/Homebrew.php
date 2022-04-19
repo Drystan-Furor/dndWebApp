@@ -33,7 +33,7 @@ class Homebrew
      * The -> the
      * Not all of the Words (In case of Yuan"-ti", we restore to Yuan-Ti)
      * 
-     * @return UserInputRace
+     * @return input ELSE random value
      */
     public static function setHomebrew()
     {
@@ -67,13 +67,14 @@ class Homebrew
      * Check if given race actually exists in Array,
      * If not, then it is a Homebrew Race
      * 
-     * @param $dndrace string of race name
+     * @param $dndrace   string of race name
+     * @param $raceArray array of races + drow
      * 
      * @return boolean
      */
-    public static function isHomebrew($dndrace)
+    public static function isHomebrew($dndrace, $raceArray)
     {
-        if (!in_array($dndrace, Race::raceArray())) {
+        if (!in_array($dndrace, $raceArray)) {
             return true; 
         } else {
             return false;
@@ -85,13 +86,14 @@ class Homebrew
      * var used to show value on page
      * value only if homebrew is true 
      * 
-     * @param $dndrace this race
+     * @param $dndrace   string of race name
+     * @param $raceArray array of races + drow
      * 
      * @return string
      */
-    public static function echoHomebrew($dndrace)
+    public static function echoHomebrew($dndrace, $raceArray)
     {
-        if (self::isHomebrew($dndrace) == true) {
+        if (self::isHomebrew($dndrace, $raceArray) == true) {
             $homebrewed = "HOMEBREW";
         } else {
             $homebrewed = "";

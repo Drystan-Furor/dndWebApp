@@ -107,8 +107,6 @@ class dragonborn extends Name
         $this->firstname = $firstname;
         return $firstname;
 
-        $this->firstname = $firstname;
-        return $firstname;
     }
 
     /**

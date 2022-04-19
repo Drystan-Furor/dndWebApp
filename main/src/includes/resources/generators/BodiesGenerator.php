@@ -9,17 +9,22 @@ class BodiesGenerator
     /**
      * Bodybuilder ;P
      * 
+     * @param $dndrace this race
      * @param $new_npc to get nouns
      */
-    public function __construct($new_npc)
+    public function __construct($dndrace, $new_npc)
     {
         $this->bodyType = self::bodyType();
         $this->bodyShape = self::bodyShape();
-        $this->bodySize = self::bodySize();
+        $this->bodySize = self::_bodySize($dndrace, $new_npc);
         $this->body = self::_bodyBuilder($new_npc);
-
     }
 
+    /**
+     * Array
+     * 
+     * @return string
+     */
     public static function bodyType()
     {
         //-----------------------------------------------------bodytypes
@@ -34,6 +39,11 @@ class BodiesGenerator
         return $bodytype;
     }
 
+    /**
+     * Array
+     * 
+     * @return string
+     */
     public static function bodyShape()
     {
         //------------------------------------------------------bodyshape
@@ -50,7 +60,12 @@ class BodiesGenerator
         return $bodyshape;
     }
 
-    public static function bodySize()
+    /**
+     * Array
+     * 
+     * @return string
+     */
+    public static function bodySizeDefault()
     {
 
         //------------------------------------------------------bodysize COMMON
@@ -89,7 +104,7 @@ class BodiesGenerator
         $this->body = "Built " . $this->bodyType . ", " //type
             . $heshe . " has a " . $gender . " body with " .
             $this->bodyShape; //shape
-        
+
         return $this->body;
     }
 
@@ -124,7 +139,7 @@ class BodiesGenerator
         return $this->bodySize;
     }
 
-    
+
     /**
      * Getter
      * 
@@ -134,4 +149,24 @@ class BodiesGenerator
     {
         return $this->body;
     }
+
+    /**
+     * Build or choose specific arrray. Select random value string
+     * 
+     * @param $dndrace this race
+     * @param $new_npc the male/female nouns
+     * 
+     * @return bodysize bodySize
+     */
+    private function _bodySize($dndrace, $new_npc)
+    {
+        if (method_exists(strtolower($dndrace), 'bodySizeReplacer') == true) {
+            $this->bodySize = strtolower($dndrace)::bodySizeReplacer($dndrace, $new_npc);
+        } else {
+            $this->bodySize = self::bodySizeDefault();
+        }
+        return $this->bodySize;
+
+    }
+
 }
