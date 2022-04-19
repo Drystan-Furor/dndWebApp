@@ -4,7 +4,7 @@
 Stel de document root van MAMP in op de /public map.
 
 ## Database
-Maak via phpmyadmin een database (bijvoorbeeld genaamd phpcursus) aan met 3 tabellen
+Maak via phpmyadmin een database (bijvoorbeeld genaamd ddndWebApp) aan met 3 tabellen
 
 1. pages
     - id (int, auto increment)
