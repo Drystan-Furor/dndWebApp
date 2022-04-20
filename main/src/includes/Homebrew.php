@@ -66,7 +66,7 @@ class Homebrew
     /**
      * Check if given race actually exists in Array,
      * If not, then it is a Homebrew Race
-     * 
+     *               
      * @param $dndrace   string of race name
      * @param $raceArray array of races + drow
      * 
@@ -85,6 +85,13 @@ class Homebrew
      * Pass a var based on boolean
      * var used to show value on page
      * value only if homebrew is true 
+     *      HARD CODED EXCEPTIONS
+     * This is required only for the echo.
+     * IF not hard coded include the dynamic racename
+     * will no longer serve a function.
+     * Through the exceptions given here, subclasses are not recognized as 
+     * a HOMEBREW. Subclasses exist only in certain instances and are not part of raceArray.
+     * the raceArray is echo'd so we o not push these to race array.
      * 
      * @param $dndrace   string of race name
      * @param $raceArray array of races + drow
@@ -93,7 +100,13 @@ class Homebrew
      */
     public static function echoHomebrew($dndrace, $raceArray)
     {
-        if (self::isHomebrew($dndrace, $raceArray) == true) {
+        if (self::isHomebrew($dndrace, $raceArray) == true
+        && $dndrace !== "Fire Genasi"
+        && $dndrace !== "Air Genasi"
+        && $dndrace !== "Earth Genasi"
+        && $dndrace !== "Water Genasi"
+        && $dndrace !== "Fallen Aasimar"
+        ) {
             $homebrewed = "HOMEBREW";
         } else {
             $homebrewed = "";

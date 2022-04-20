@@ -118,6 +118,8 @@ class elf extends Name
     /**
      * RNG if race subclasses
      * 
+     * @param $dndrace this race
+     * 
      * @return property of object
      */
     public function subclass($dndrace)

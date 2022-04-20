@@ -45,3 +45,5 @@ class DndRngNpc
 
     get name -> get THIS race -> get raceclass.
 }
+
+genasi subclasses are not homebrew
