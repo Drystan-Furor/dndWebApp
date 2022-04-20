@@ -162,6 +162,8 @@ class BodiesGenerator
     {
         if (method_exists(strtolower($dndrace), 'bodySizeReplacer') == true) {
             $this->bodySize = strtolower($dndrace)::bodySizeReplacer($dndrace, $new_npc);
+        } else if (strpos($dndrace, 'Gnome')) {
+            $this->bodySize = gnome::bodySizeReplacer($dndrace, $new_npc);
         } else {
             $this->bodySize = self::bodySizeDefault();
         }

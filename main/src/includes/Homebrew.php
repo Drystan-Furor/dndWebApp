@@ -93,6 +93,8 @@ class Homebrew
      * a HOMEBREW. Subclasses exist only in certain instances and are not part of raceArray.
      * the raceArray is echo'd so we o not push these to race array.
      * 
+     * 'Githyanki', 'Githzerai', 'Githvyrik'
+     * 
      * @param $dndrace   string of race name
      * @param $raceArray array of races + drow
      * 
@@ -106,6 +108,9 @@ class Homebrew
         && $dndrace !== "Earth Genasi"
         && $dndrace !== "Water Genasi"
         && $dndrace !== "Fallen Aasimar"
+        && $dndrace !== "Githyanki"
+        && $dndrace !== "Githzerai"
+        && $dndrace !== "Githvyrik"
         ) {
             $homebrewed = "HOMEBREW";
         } else {

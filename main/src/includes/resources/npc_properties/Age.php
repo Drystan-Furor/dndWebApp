@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AGE Script
  */
@@ -10,10 +11,10 @@ class Age extends Race
      */
     public function __construct($dndrace)
     {
-        $this->Class_age = self::_defineAge($dndrace); 
+        $this->Class_age = self::_defineAge($dndrace);
         //construct default
     }
-    
+
     /**
      * Setter
      * 
@@ -38,12 +39,26 @@ class Age extends Race
         //Get the set age
     }
 
+    /**
+     * Getter/Setter
+     * 
+     * @return this object
+     */
+    public static function defaultAge($dndrace)
+    {
+        $age = self::_defineDefaultAge($dndrace);
+        return $age;
+        //Get the set age
+    }
+
     /** 
      * Age Selector IF race != human aging 
      * 
+     * @param $dndrace this race
+     * 
      * @return specific age
      */
-    private function _defineAge($dndrace)
+    private function _defineDefaultAge($dndrace)
     {
         switch ($dndrace) {
             case $dndrace == "Elf":
@@ -56,12 +71,12 @@ class Age extends Race
             case $dndrace == "Dwarf" || $dndrace == "Firbolg":
                 $this->age = rand(14, 350);
                 break;
-            case $dndrace == "Human" 
-            || $dndrace == "Yuan Ti Pureblood" || $dndrace == "Goliath":
+            case $dndrace == "Human"
+                || $dndrace == "Yuan Ti Pureblood" || $dndrace == "Goliath":
                 $this->age = rand(14, 90);
                 break;
-            case $dndrace == "Tiefling" 
-            || $dndrace == "Gith" || $dndrace == "Changeling":
+            case $dndrace == "Tiefling"
+                || $dndrace == "Gith" || $dndrace == "Changeling":
                 $this->age = rand(14, 100);
                 break;
             case $dndrace == "Aarakocra" || $dndrace == "Warforged":
@@ -79,9 +94,9 @@ class Age extends Race
             case $dndrace == "Halfling" || $dndrace == "Verdan":
                 $this->age = rand(14, 250);
                 break;
-            case $dndrace == "Orc of Exandria" 
-            || $dndrace == "Orc of Ebberon" 
-            || $dndrace == "Half Orc":
+            case $dndrace == "Orc of Exandria"
+                || $dndrace == "Orc of Ebberon"
+                || $dndrace == "Half Orc":
                 $this->age = rand(14, 75);
                 break;
             case $dndrace == "Gnome" || $dndrace == "Loxodon":
@@ -94,6 +109,22 @@ class Age extends Race
                 $this->age = rand(14, 80); // age is always 14 - 80 not dependend on $race
                 break;
                 return $this->age;
+        }
+    }
+
+    /**
+     * Build or choose specific arrray. Select random value string
+     * 
+     * @param $dndrace this race
+     * 
+     * @return Age
+     */
+    private function _defineAge($dndrace)
+    {
+        if (method_exists(strtolower($dndrace), 'ageReplacer') == true) {
+            $this->age = strtolower($dndrace)::ageReplacer($dndrace);
+        } else {
+            $this->age = self::_defineDefaultAge($dndrace);
         }
     }
 }

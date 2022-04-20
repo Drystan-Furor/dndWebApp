@@ -34,7 +34,7 @@ class Belts
             'a sash', 'some lockpicks', 'an Abacus', 'a crowbar',
             'a waterskin', 'a hooded lantern', "carpenter's tools",
             'a cylindrical leather case', 'a grappling hook', "a healer's kit",
-            'a magniffying glass', 'a leather-bound tome',
+            'a magnifying glass', 'a leather-bound tome',
             'a spyglass', 'a dangling censer', 'a drinking horn',
             'an iron flask', 'a boomerang', 'ten pouches',
         ];
@@ -81,6 +81,18 @@ class Belts
     public static function belt()
     {
         // array of mixed vars from arrays.
+        $item1 = self::_beltitem();
+        $item2 = self::_beltitem();
+        $item3 = self::_beltitem();
+
+        while ($item1 === $item2 || $item3 === $item2) {
+            $item2 = self::_beltitem();
+        }
+
+        while ($item3 === $item1 || $item3 === $item2) {
+            $item3 = self::_beltitem();
+        }
+
         $belts = [
             //belt + buckle
             self::_beltFashion() . " " . self::beltmaterial() . " 
@@ -96,13 +108,13 @@ class Belts
 
             //belt + 2 items
             self::_beltFashion() . " " . self::beltmaterial() . " belt
-            with " . self::_beltitem() . " and " . self::_beltitem() . " 
+            with " . $item1 . " and " . $item2 . " 
             strapped to it",
 
             // belt + 3 items
             self::_beltFashion() . " " . self::beltmaterial() . " belt
-            used to hold  " . self::_beltitem() . ",  " . self::_beltitem() . "
-            and  " . self::_beltitem(),
+            used to hold  " . $item1 . ",  " . $item2 . "
+            and  " . $item3,
 
             //belt + item && belt 2 + item2
             self::_beltFashion() . " " . self::beltmaterial() . " belt
@@ -113,14 +125,14 @@ class Belts
 
             //BANDOLIERS
             self::_beltFashion() . " " . self::beltmaterial() . " 
-            bandolier with " . self::_beltitem() . ", " . self::_beltitem() . "
-            and " . self::_beltitem() . " attached to it",
+            bandolier with " . $item1 . ", " . $item2 . "
+            and " . $item3 . " attached to it",
             //belt + item && bandolier + 2 item
             self::_beltFashion() . " " . self::beltmaterial() . " belt
             holding " . self::_beltitem() . " and a " . self::_beltFashion() .
                 " " . self::beltmaterial() . " bandolier with a "
                 . MaterialGenerator::getMetalType() . " buckle holding "
-                . self::_beltitem() . " and " . self::_beltitem(),
+                . $item1 . " and " . $item2,
         ];
         //pregenerated belt selector
         $belt = array_rand(array_flip($belts), 1);
