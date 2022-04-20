@@ -165,7 +165,6 @@ class gnome extends Name
      */
     public static function ageReplacer($dndrace)
     {
-
         if ($dndrace == "Deep Gnome") {
             $age = rand(14, 250);
             return $age;

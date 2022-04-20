@@ -13,7 +13,7 @@ class aaaDefault extends Name
     public function __construct($dndrace, $new_npc)
     {
         $this->lastname = self::_lastname();
-        $this->firstname = self::_firstname();
+        $this->firstname = self::_firstname($new_npc);
         $this->nickname = self::_nickname();
         $this->description = self::_description($dndrace, $new_npc);
     }
@@ -38,15 +38,24 @@ class aaaDefault extends Name
      * 
      * @return string
      */
-    private function _firstname()
+    private function _firstname($new_npc)
     {
-        $firstnames = [
-            'Array', 
-        ];
-        $firstname = array_rand(array_flip($firstnames), 1);
+        if ($new_npc->getGender() == 'male') {
+            $malenames = [
+                'Array', 
+            ];
+            $firstname = array_rand(array_flip($malenames), 1);
+        }
 
+        if ($new_npc->getGender() == 'female') {
+            $femalenames = [
+                'Array', 
+            ];
+            $firstname = array_rand(array_flip($femalenames), 1);
+        }
         $this->firstname = $firstname;
         return $firstname;
+
     }
 
     /**

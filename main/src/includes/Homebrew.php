@@ -103,14 +103,12 @@ class Homebrew
     public static function echoHomebrew($dndrace, $raceArray)
     {
         if (self::isHomebrew($dndrace, $raceArray) == true
-        && $dndrace !== "Fire Genasi"
-        && $dndrace !== "Air Genasi"
-        && $dndrace !== "Earth Genasi"
-        && $dndrace !== "Water Genasi"
+        && !strpos($dndrace, 'Genasi')
+        && !strpos($dndrace, 'Gnome')
+        && !strpos($dndrace, 'Elf')
+        && !str_starts_with($dndrace, 'Gith')
         && $dndrace !== "Fallen Aasimar"
-        && $dndrace !== "Githyanki"
-        && $dndrace !== "Githzerai"
-        && $dndrace !== "Githvyrik"
+
         ) {
             $homebrewed = "HOMEBREW";
         } else {

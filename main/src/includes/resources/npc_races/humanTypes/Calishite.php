@@ -7,10 +7,10 @@ class Calishite extends Name
     /**
      * Biography
      * 
-     * @param $dndrace    string
+     * @param $dndrace string
      * @param $new_npc string
      */
-    private function __construct($dndrace, $new_npc)
+    public function __construct($dndrace, $new_npc)
     {
         $this->lastname = self::_lastname();
         $this->firstname = self::_firstname($new_npc);
@@ -78,60 +78,6 @@ class Calishite extends Name
 
 
     //-----------------------------------------REPLACERS
-    /**
-     * Array of replacer
-     * 
-     * @return Nose replacer
-     */
-    public static function noseReplacer()
-    {
-        $nose = Nose::defaultNose();
-        return $nose;
-    }
 
-    /**
-     * Array of eyes.
-     * 
-     * @return eyes replacer
-     */
-    public static function eyesReplacer()
-    {
-        $eyes = Eyes::canSee();
-        return $eyes;
-    }
-
-
-    /**
-     * Array of replacer
-     * 
-     * @return mouth replacer
-     */
-    public static function mouthReplacer()
-    {
-        $mouth = Mouth::defaultMouths();
-        return $mouth;
-    }
-
-    /**
-     * Array of replacer
-     * 
-     * @return chin replacer
-     */
-    public static function chinReplacer()
-    {
-        $chin = Chin::defaultChin();
-        return $chin;
-    }
-
-    /**
-     * Array of replacer
-     * 
-     * @return teeth replacer
-     */
-    public static function teethReplacer()
-    {
-        $teeth = Teeth::defaultTeeth();
-        return $teeth;
-    }
     
 }

@@ -1,0 +1,1 @@
+[20-Apr-2022 16:41:10 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_mysql.so' (tried: ext\pdo_mysql.so (The specified module could not be found), ext\php_pdo_mysql.so.dll (The specified module could not be found)) in Unknown on line 0
