@@ -1,4 +1,5 @@
 <?php
+
 /** 
  * Calishite Names
  */
@@ -41,21 +42,20 @@ class Calishite extends Name
     {
         if ($new_npc->getGender() == 'male') {
             $malenames = [
-            'Aseir', 'Bardeid', 'Haseid', 'Khemed', 'Mehmen', 'Sudeiman', 'Zasheir',
+                'Aseir', 'Bardeid', 'Haseid', 'Khemed', 'Mehmen', 'Sudeiman', 'Zasheir',
             ];
-            $firstname = array_rand(array_flip($malenames), 1);    
-        }   
-    
+            $firstname = array_rand(array_flip($malenames), 1);
+        }
+
         if ($new_npc->getGender() == 'female') {
             $femalenames = [
-            'Atala', 'Ceidil', 'Hama', 'Jasmal', 'Meilil', 'Seipora', 
-            'Yasheira', 'Zasheida', 
+                'Atala', 'Ceidil', 'Hama', 'Jasmal', 'Meilil', 'Seipora',
+                'Yasheira', 'Zasheida',
             ];
-            $firstname = array_rand(array_flip($femalenames), 1);            
-        } 
+            $firstname = array_rand(array_flip($femalenames), 1);
+        }
         return $firstname;
     }
-
 
     /**
      * Array
@@ -71,13 +71,8 @@ class Calishite extends Name
     {
         $description = "Shorter and slighter in build than most other humans, 
                         Calishites have dusky brown skin, hair, and eyes. 
-                        They’re found primarily in southwest Faerûn."; 
+                        They’re found primarily in southwest Faerûn.";
 
         return $description;
     }
-
-
-    //-----------------------------------------REPLACERS
-
-    
 }

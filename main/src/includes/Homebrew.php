@@ -94,6 +94,7 @@ class Homebrew
      * the raceArray is echo'd so we o not push these to race array.
      * 
      * 'Githyanki', 'Githzerai', 'Githvyrik'
+     * Half-Elf
      * 
      * @param $dndrace   string of race name
      * @param $raceArray array of races + drow
@@ -105,10 +106,10 @@ class Homebrew
         if (self::isHomebrew($dndrace, $raceArray) == true
         && !strpos($dndrace, 'Genasi')
         && !strpos($dndrace, 'Gnome')
-        && !strpos($dndrace, 'Elf')
+        && !strpos($dndrace, 'Human')
+        && !str_contains($dndrace, 'Elf')
         && !str_starts_with($dndrace, 'Gith')
         && $dndrace !== "Fallen Aasimar"
-
         ) {
             $homebrewed = "HOMEBREW";
         } else {

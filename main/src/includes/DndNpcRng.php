@@ -165,6 +165,7 @@ class DndNpcRng
      */
     private function _writeStory()
     {
+        var_dump($this->dndrace);
         //BioName
         $string =  "You meet " . $this->firstname . " " . $this->lastname . ". ";
         // {generrateee npc, getRace call script get name}

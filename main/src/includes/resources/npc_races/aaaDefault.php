@@ -1,4 +1,5 @@
 <?php
+
 /** 
  * Default Names
  */
@@ -26,7 +27,7 @@ class aaaDefault extends Name
     private function _lastname()
     {
         $surnames = [
-            'Array', 
+            'Array',
         ];
         $lastname = array_rand(array_flip($surnames), 1);
         $this->lastname = $lastname;
@@ -42,20 +43,19 @@ class aaaDefault extends Name
     {
         if ($new_npc->getGender() == 'male') {
             $malenames = [
-                'Array', 
+                'Array',
             ];
             $firstname = array_rand(array_flip($malenames), 1);
         }
 
         if ($new_npc->getGender() == 'female') {
             $femalenames = [
-                'Array', 
+                'Array',
             ];
             $firstname = array_rand(array_flip($femalenames), 1);
         }
         $this->firstname = $firstname;
         return $firstname;
-
     }
 
     /**
@@ -144,5 +144,20 @@ class aaaDefault extends Name
         $teeth = Teeth::defaultTeeth();
         return $teeth;
     }
-    
+
+    /**
+     * Array of replacer
+     * 
+     * @return age replacer
+     */
+    public static function ageReplacer($dndrace)
+    {
+        if ($dndrace == "Deep Gnome") {
+            $age = rand(14, 250);
+            return $age;
+        } else {
+            $age = rand(14, 425);
+            return $age;
+        }
+    }
 }
