@@ -21,6 +21,7 @@ body {
 
 .adminmenucontainer {
     position: relative;
+    z-index: 2;
 }
 
 .adminmenu {
@@ -29,6 +30,7 @@ body {
     right: 16px;
     padding: 15px;
     border: 3px solid #EE8600;
+    margin-top: 5px;
     border-radius: 50px;
     font-size: 80%;
     text-align: center;
@@ -46,11 +48,14 @@ body {
 /* navigatie menu ---------------------------------------------------------------------------*/
 
 .navmenucontainer {
-    position: relative;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
 }
 
 .navmenu {
-    position: absolute;
+    position: relative;
     background-color: #767676;
     color: white;
     padding: 1px 5px 1px 5px;
@@ -63,6 +68,7 @@ body {
     top: 0px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: -10px;
     font-size: 18px;
     width: 100%;
 }
@@ -83,10 +89,13 @@ body {
 /*----------------logoutcontainer----------*/
 
 .logoutcontainer {
+    z-index: 2;
     position: relative;
     display: block;
     margin-left: auto;
     margin-right: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     width: 10%;
     font-family: Copperplate, Fantasy, serif;
     /*text-shadow: 2px 2px;*/
@@ -109,6 +118,7 @@ body {
 /* HOME.php -------------------*/
 
 .rngcenter {
+    position: relative;
     font-family: Copperplate, Fantasy, serif;
     font-weight: bold;
     /*text-shadow: 2px 2px;*/
@@ -348,7 +358,7 @@ body {
     padding-bottom: 10%;
     margin-bottom: 10%;
     margin-top: 20px;
-    width: 90%;
+    width: 80%;
     font-size: 80%;
     background-color: white;
     border: 3px solid #EE8600;
