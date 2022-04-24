@@ -167,7 +167,7 @@ class Race
     {
         $dndrace = strtolower($dndrace);              //no caps's in filename
         $dndrace = str_replace(' ', '', $dndrace);    //no spaces in filename
-        $dndrace = str_replace('-', '', $dndrace);    //no dashes in filename
+        $dndrace = str_replace('-', '', $dndrace);    //no dashes in filename Half-Elf
 
         return $dndrace;
     }

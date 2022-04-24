@@ -57,7 +57,6 @@ class Calishite extends Name
         return $firstname;
     }
 
-
     /**
      * Array
      * $dndrace->getRace()
@@ -76,5 +75,4 @@ class Calishite extends Name
 
         return $description;
     }
-
 }

@@ -131,7 +131,7 @@ class dragonborn extends Name
      */
     private function _description($dndrace, $new_npc)
     {
-        $description = $dndrace . " look very much like dragons standing erect 
+        $description = $dndrace->getRace() . " look very much like dragons standing erect 
     in humanoid form, though " . $this->firstname .
             " lack wings or a tail. The clans ancestry 
     gives " . $this->lastname . " a " . dragonborn::ancestry() . " scale color.";

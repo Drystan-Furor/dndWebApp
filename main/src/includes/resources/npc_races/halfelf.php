@@ -1,30 +1,126 @@
 <?php
 
-    // Half-Elf
-$isHalfElf = true;
+/** 
+ * Halfelf Names
+ * Half-elves use either human or elven naming conventions. 
+ * As if to emphasize that they don’t really fit in to either society,
+ * half-elves raised among humans are often given elven names, 
+ * and those raised among elves often take human names.
+ */
+class halfelf extends Name
+{
+    /**
+     * Biography
+     * 
+     * @param $dndrace string
+     * @param $new_npc string
+     */
+    public function __construct($dndrace, $new_npc)
+    {
+        $biography = self::derivedClass();
+        $biography = new $biography();
+        $this->lastname = $biography->getLastName();
+        $this->firstname = $biography->getFirstName();
+        $this->nickname = self::_nickname();
+        $this->description = self::_description($dndrace, $new_npc);
+    }
 
-//---------------not as old as elves------------------AGE RESET
-$age = rand(14, 180);
+    /**
+     * RNG if race derived from classes
+     * 
+     * @return property of object
+     */
+    public function derivedClass()
+    {
+            $elfraces = [
+                "Human", "Elf"
+            ];
+            $race = array_rand(array_flip($elfraces), 1);
+            return $race;       
+    }
 
-//---------------------------------------------------name
-/*
-Half-elves use either human or elven naming conventions. 
-As if to emphasize that they don’t really fit in to either society, 
-half-elves raised among humans are often given elven names, 
-and those raised among elves often take human names.
-*/
+    /**
+     * Array
+     * 
+     * @return string
+     */
+    private function _lastname()
+    {
+        $surnames = [
+            'Array',
+        ];
+        $lastname = array_rand(array_flip($surnames), 1);
+        $this->lastname = $lastname;
+        return $lastname;
+    }
 
-$divergence = "Walking in two worlds but truly belonging to neither, 
-    a $race combines what some say are the best qualities of their elf and human 
-    parents: human curiosity, inventiveness, and ambition tempered by the 
-    refined senses, love of nature, and artistic tastes of the elves.";
+    /**
+     * Array
+     * 
+     * @return string
+     */
+    private function _firstname($new_npc)
+    {
+        if ($new_npc->getGender() == 'male') {
+            $malenames = [
+                'Array',
+            ];
+            $firstname = array_rand(array_flip($malenames), 1);
+        }
 
-$namingConvention = rand(1, 2);
-if ($namingConvention == 1) {
-    // has an Elvish name
-    include_once 'includes/dndraces/elf.php'; // call script Elf
-} else {
-    // has a human name
-    include_once 'includes/dndraces/human.php'; // call script Human
+        if ($new_npc->getGender() == 'female') {
+            $femalenames = [
+                'Array',
+            ];
+            $firstname = array_rand(array_flip($femalenames), 1);
+        }
+        $this->firstname = $firstname;
+        return $firstname;
+    }
+
+    /**
+     * Array
+     * 
+     * @return string
+     */
+    private function _nickname()
+    {
+        $nickname = $this->lastname;
+        $this->nickname = $nickname;
+        return $nickname;
+    }
+
+    /**
+     * Array
+     * 
+     * @param $dndrace this race 
+     * @param $new_npc nouns
+     * 
+     * @return string
+     */
+    private function _description($dndrace, $new_npc)
+    {
+        $description = "Walking in two worlds but truly belonging to neither, 
+        a " . $dndrace->getRace() .
+            " combines what some say are the best qualities of their elf and human 
+        parents: human curiosity, inventiveness, and ambition tempered by the 
+        refined senses, love of nature, and artistic tastes of the elves.";
+
+        return $description;
+    }
+
+
+    //-----------------------------------------REPLACERS
+    /**
+     * Array of replacer
+     * 
+     * @param $dndrace Race object
+     * 
+     * @return age replacer
+     */
+    public static function ageReplacer($dndrace)
+    {
+        $age = rand(14, 180);
+        return $age;
+    }
 }
-
