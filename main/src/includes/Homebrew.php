@@ -74,7 +74,14 @@ class Homebrew
      */
     public static function isHomebrew($dndrace, $raceArray)
     {
-        if (!in_array($dndrace, $raceArray)) {
+        if (!in_array($dndrace, $raceArray)
+        && !strpos($dndrace, 'Genasi')
+        && !strpos($dndrace, 'Gnome')
+        && !strpos($dndrace, 'Human')
+        && !str_contains($dndrace, 'Elf')
+        && !str_starts_with($dndrace, 'Gith')
+        && $dndrace !== "Fallen Aasimar"
+        ) {
             return true; 
         } else {
             return false;

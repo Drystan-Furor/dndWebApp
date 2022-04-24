@@ -26,6 +26,10 @@ class halfelf extends Name
     }
 
     /**
+    BECAUSE HALFELF DOES NOT EXIST IN ARRAY WE GET RANDOM ORIGIN, SO RANDOM DNDRACE.
+    Half-Elf is turned into halfelf, and Halfelf is not in array
+    */
+    /**
      * RNG if race derived from classes
      * 
      * @return property of object
