@@ -79,6 +79,7 @@ class Homebrew
         && !strpos($dndrace, 'Gnome')
         && !strpos($dndrace, 'Human')
         && !str_contains($dndrace, 'Elf')
+        && !str_contains($dndrace, 'elf')
         && !str_starts_with($dndrace, 'Gith')
         && $dndrace !== "Fallen Aasimar"
         ) {

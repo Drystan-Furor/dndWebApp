@@ -18,7 +18,7 @@ class halfelf extends Name
     public function __construct($dndrace, $new_npc)
     {
         $biography = self::derivedClass();
-        $biography = new $biography();
+        $biography = new $biography($dndrace, $new_npc);
         $this->lastname = $biography->getLastName();
         $this->firstname = $biography->getFirstName();
         $this->nickname = self::_nickname();
