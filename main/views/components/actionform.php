@@ -3,14 +3,14 @@
     <div class="form-group row">
         <label for="title" class="col-4 col-form-label">Title</label>
         <div class="col-8">
-            <input id="title" name="title" placeholder="Vul de titel in" type="text" required="required" class="form-control" value="<?php echo $valueTitle; ?>">
+            <input id="title" name="title" placeholder="Enter a title" type="text" required="required" class="form-control" value="<?php echo $valueTitle; ?>">
         </div>
     </div>
     <div class="form-group row">
         <label for="content" class="col-4 col-form-label">Content</label>
         <div class="col-8">
             <textarea id="content" name="content" cols="40" rows="5" class="form-control" aria-describedby="contentHelpBlock"><?php echo $valueContent; ?></textarea>
-            <span id="contentHelpBlock" class="form-text text-muted">Vul de pagina content in</span>
+            <span id="contentHelpBlock" class="form-text text-muted">Enter the page content</span>
         </div>
     </div>
     <div class="form-group row">

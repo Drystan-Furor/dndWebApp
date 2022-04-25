@@ -9,8 +9,8 @@ class BodiesGenerator
     /**
      * Bodybuilder ;P
      * 
-     * @param $dndrace this race
-     * @param $new_npc to get nouns
+     * @param $dndrace object Race
+     * @param $new_npc object Gender
      */
     public function __construct($dndrace, $new_npc)
     {
@@ -132,7 +132,7 @@ class BodiesGenerator
     /**
      * Getter
      * 
-     * @return this object
+     * @return self::_bodySize
      */
     public function getBodySize()
     {
