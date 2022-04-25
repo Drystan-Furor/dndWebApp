@@ -1,4 +1,5 @@
 <?php
+
 /** 
  * Centaur Names
  */
@@ -95,10 +96,10 @@ class centaur extends Name
      */
     private function _description($dndrace, $new_npc)
     {
-        $description = "Roamers at heart, " . $dndrace->getRace() 
-        . "s love open spaces and the freedom 
-        to travel. As much as they can, " . $dndrace->getRace() 
-        . "s run. They race the wind,
+        $description = "Roamers at heart, " . $dndrace->getRace()
+            . "s love open spaces and the freedom 
+        to travel. As much as they can, " . $dndrace->getRace()
+            . "s run. They race the wind,
          hooves thundering and tails streaming behind them.";
 
         return $description;
@@ -106,61 +107,6 @@ class centaur extends Name
 
 
     //-----------------------------------------REPLACERS
-    /**
-     * Array of replacer
-     * 
-     * @return Nose replacer
-     */
-    public static function noseReplacer()
-    {
-        $nose = Nose::defaultNose();
-        return $nose;
-    }
-
-    /**
-     * Array of eyes.
-     * 
-     * @return eyes replacer
-     */
-    public static function eyesReplacer()
-    {
-        $eyes = Eyes::canSee();
-        return $eyes;
-    }
-
-
-    /**
-     * Array of replacer
-     * 
-     * @return mouth replacer
-     */
-    public static function mouthReplacer()
-    {
-        $mouth = Mouth::defaultMouths();
-        return $mouth;
-    }
-
-    /**
-     * Array of replacer
-     * 
-     * @return chin replacer
-     */
-    public static function chinReplacer()
-    {
-        $chin = Chin::defaultChin();
-        return $chin;
-    }
-
-    /**
-     * Array of replacer
-     * 
-     * @return teeth replacer
-     */
-    public static function teethReplacer()
-    {
-        $teeth = Teeth::defaultTeeth();
-        return $teeth;
-    }
 
     /**
      * Not shoes but hooves
@@ -197,5 +143,25 @@ class centaur extends Name
 
         $shoe = "This Centaur has $hiLow, $shape $hoof hooves. ";
         return $shoe;
+    }
+
+    /**
+     * Array of replacer
+     * 
+     * @return Bodysize replacer
+     */
+    public static function bodySizeReplacer()
+    {
+        $bodysizes = [
+            "sort of typical giant-sized", "common giant sized",
+            "characteristically large sized", "naturally large sized", "typical",
+            "more or less standard sized", "moderately large sized", 'sizable',
+
+            "large", "quite large", "very large", "really large",
+            "slightly larger", "reasonably large", 'immense', 'enormous',
+            "massive", "tall", 'big', 'hulking', 'towering', 'giant',
+        ];
+        $bodysize = array_rand(array_flip($bodysizes), 1);
+        return $bodysize;
     }
 }

@@ -1,8 +1,6 @@
 <?php
+
 /**
- * $this->homebrew [BOOLEAN]
- * [true] IF [$race != in array]
- * 
  * Homebrew is when a race does not exist in the given array, 
  * which means the user gives input.
  * Basically Homebrew means to use any given string from FORM
@@ -42,15 +40,15 @@ class Homebrew
             && !ctype_space($_POST['commonrace']) // is it NOT white spacing
             && !((bool)$_POST['commonrace'] == null) // does it exist?
         ) {
-            $dndrace = EscapeString::from_Input(($_POST['commonrace']));//clean it
-            $dndrace = ucwords(strtolower($dndrace)); 
-            $dndrace = ucfirst(str_replace("Of", "of", $dndrace)); 
-            $dndrace = ucfirst(str_replace("The", "the", $dndrace)); 
-            $dndrace = ucfirst(str_replace("Yuan-ti", "Yuan-Ti", $dndrace)); 
+            $dndrace = EscapeString::from_Input(($_POST['commonrace'])); //clean it
+            $dndrace = ucwords(strtolower($dndrace));
+            $dndrace = ucfirst(str_replace("Of", "of", $dndrace));
+            $dndrace = ucfirst(str_replace("The", "the", $dndrace));
+            $dndrace = ucfirst(str_replace("Yuan-ti", "Yuan-Ti", $dndrace));
         } else {
             $dndrace = Race::randomRace();
         }
-        return $dndrace; 
+        return $dndrace;
     }
 
     /**
@@ -75,17 +73,18 @@ class Homebrew
     public static function isHomebrew($dndrace, $raceArray)
     {
         if (!in_array($dndrace, $raceArray)
-        && !strpos($dndrace, 'Genasi')
-        && !strpos($dndrace, 'Gnome')
-        && !strpos($dndrace, 'Human')
-        && !strpos($dndrace, 'Halfling')
-        && !str_contains($dndrace, 'Elf')
-        && !str_contains($dndrace, 'elf')
-        && !str_contains($dndrace, 'orc')
-        && !str_starts_with($dndrace, 'Gith')
-        && $dndrace !== "Fallen Aasimar"
+            && !strpos($dndrace, 'Genasi')
+            && !strpos($dndrace, 'Gnome')
+            && !strpos($dndrace, 'Human')
+            && !strpos($dndrace, 'Halfling')
+            && !strpos($dndrace, 'Loxodon')
+            && !str_contains($dndrace, 'Elf')
+            && !str_contains($dndrace, 'elf')
+            && !str_contains($dndrace, 'orc')
+            && !str_starts_with($dndrace, 'Gith')
+            && $dndrace !== "Fallen Aasimar"
         ) {
-            return true; 
+            return true;
         } else {
             return false;
         }
@@ -113,9 +112,7 @@ class Homebrew
      */
     public static function echoHomebrew($dndrace, $raceArray)
     {
-        if (self::isHomebrew($dndrace, $raceArray) == true
-
-        ) {
+        if (self::isHomebrew($dndrace, $raceArray) == true) {
             $homebrewed = "HOMEBREW";
         } else {
             $homebrewed = "";
