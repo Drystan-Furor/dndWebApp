@@ -160,4 +160,21 @@ class aaaDefault extends Name
             return $age;
         }
     }
+
+    /**
+     * Array of replacer
+     * 
+     * @return Bodysize replacer
+     */
+    public static function bodySizeReplacer()
+    {
+        $bodysizes = [
+            "very small", "quite small", "small", "small sized",
+            "rather tiny", "below middle sized", "really small",
+            "slightly smaller", "rather small", "reasonably small",
+            "tiny", "characteristically tiny sized", "naturally small sized",
+        ];
+        $bodysize = array_rand(array_flip($bodysizes), 1);
+        return $bodysize;
+    }
 }

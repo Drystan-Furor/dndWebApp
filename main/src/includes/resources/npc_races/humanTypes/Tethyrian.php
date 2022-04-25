@@ -4,7 +4,7 @@
  * Tethyrians Names
  * Tethyrians primarily use Chondathan names.
  */
-class Tethyrians extends Name
+class Tethyrian extends Name
 {
     /**
      * Biography

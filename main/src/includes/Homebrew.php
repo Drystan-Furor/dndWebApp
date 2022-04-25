@@ -78,8 +78,10 @@ class Homebrew
         && !strpos($dndrace, 'Genasi')
         && !strpos($dndrace, 'Gnome')
         && !strpos($dndrace, 'Human')
+        && !strpos($dndrace, 'Halfling')
         && !str_contains($dndrace, 'Elf')
         && !str_contains($dndrace, 'elf')
+        && !str_contains($dndrace, 'orc')
         && !str_starts_with($dndrace, 'Gith')
         && $dndrace !== "Fallen Aasimar"
         ) {
@@ -112,12 +114,7 @@ class Homebrew
     public static function echoHomebrew($dndrace, $raceArray)
     {
         if (self::isHomebrew($dndrace, $raceArray) == true
-        && !strpos($dndrace, 'Genasi')
-        && !strpos($dndrace, 'Gnome')
-        && !strpos($dndrace, 'Human')
-        && !str_contains($dndrace, 'Elf')
-        && !str_starts_with($dndrace, 'Gith')
-        && $dndrace !== "Fallen Aasimar"
+
         ) {
             $homebrewed = "HOMEBREW";
         } else {
