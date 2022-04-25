@@ -126,6 +126,27 @@ class VerbsGenerator
         $clasps = array_rand(array_flip($clasping), 1);
         return $clasps;
     }
+
+    /**
+     * Array
+     * VerbsGenerator::named()
+     *  
+     * @return string
+     */
+    public static function named()
+    {
+        $namings = [
+            'named',
+            'renamed',
+            'call',
+            'refer to',
+            'dubbed',
+            'labeled',
+            'titled',
+        ];
+        $named = array_rand(array_flip($namings));
+        return $named;
+    }
 }
 //$class = VerbsGenerator::getClass();// make functions static to call them this way
 /*
