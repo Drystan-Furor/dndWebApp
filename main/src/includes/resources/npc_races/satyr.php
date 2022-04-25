@@ -5,13 +5,6 @@
  * Satyrs have names that they draw from legends and 
  * myths-and from the powers that rule over the realm of the fey.
  */
-
-
-
-
-/** 
- * Satyr Names
- */
 class satyr extends Name
 {
     /**
@@ -22,8 +15,8 @@ class satyr extends Name
      */
     public function __construct($dndrace, $new_npc)
     {
-        $this->lastname = self::_lastname();
-        $this->firstname = self::_firstname($new_npc);
+        $this->lastname = self::_lastname($new_npc);
+        $this->firstname = self::_firstname();
         $this->nickname = self::_nickname();
         $this->description = self::_description($dndrace, $new_npc);
     }
@@ -90,11 +83,10 @@ class satyr extends Name
      */
     private function _description($dndrace, $new_npc)
     {
-        $description = "string " . $dndrace->getRace() .
-            " string " . $this->lastname . " string " . $new_npc->getHisHer() .
-            " string.";
-            $dndrace->getRace() . "s resemble stout men and woman with fur covered lower bodies 
-        and hooves similar to that of a goat. Horns grow from " . $this->nickname . "'s head, 
+        $description = $dndrace->getRace() . "s 
+        resemble stout men and woman with fur covered lower bodies 
+        and hooves similar to that of a goat. Horns grow from "
+            . $this->nickname . "'s head, 
         akin to a ram.";
 
         return $description;
