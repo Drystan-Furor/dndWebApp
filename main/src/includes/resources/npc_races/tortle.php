@@ -8,8 +8,6 @@
  * so encountering a tortle years later can look different and pick a new name.
  *
  */
-
-
 class tortle extends Name
 {
     /**

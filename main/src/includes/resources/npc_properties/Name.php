@@ -27,9 +27,9 @@ class Name extends Race
      * @param $race   == dndrace
      * @param $origin == race origin / hertiage 
      */
-    public function __construct($dndrace, $new_npc, $array, $age)
+    public function __construct($dndrace, $new_npc, $array, $age, $origin)
     {
-        $this->biography = self::_generateName($dndrace, $new_npc, $array, $age);
+        $this->biography = self::_generateName($dndrace, $new_npc, $array, $age, $origin);
     } //object name exists
 
     
@@ -43,7 +43,7 @@ class Name extends Race
      * 
      * @return raceClass()
      */
-    private function _generateName($dndrace, $new_npc, $array, $age) 
+    private function _generateName($dndrace, $new_npc, $array, $age, $origin) 
     {
         //address the exceptions of races first
         if (Homebrew::isHomebrew($dndrace->getRace(), $array) == true) {
@@ -55,7 +55,7 @@ class Name extends Race
         // ELSE == ALL other scenario's
 
         $raceName = Race::lowercase($raceName);
-        $raceName = new $raceName($dndrace, $new_npc, $array, $age);    //new aarakocra() [example]
+        $raceName = new $raceName($dndrace, $new_npc, $array, $age, $origin);
 
         $this->lastname = $raceName->getLastname();
         $this->firstname = $raceName->getFirstname();
