@@ -1,8 +1,9 @@
 <?php
- /** 
-  * Gender RNG
-  * Gender Vars and Person Pronounce
-  */
+
+/** 
+ * Gender RNG
+ * Gender Vars and Person Pronounce
+ */
 class Gender
 {
     /**
@@ -10,7 +11,7 @@ class Gender
      */
     public function __construct()
     {
-        $this->Class_gender = self::_setGender();
+        $this->Class_gender = self::_setRandomGender();
     }
 
 
@@ -22,7 +23,7 @@ class Gender
      * 
      * @return pronounces
      */
-    private function _setGender() 
+    private function _setRandomGender()
     {
         $rnggender = rand(1, 2);
         if ($rnggender == 1) {
@@ -30,13 +31,12 @@ class Gender
             $this->manWoman = 'man';
             $this->heshe = 'he';
             $this->hisher = 'his';
-
         } else {
             $this->gender = 'female';
             $this->manWoman = 'woman';
             $this->heshe = 'she';
             $this->hisher = 'her';
-        }   
+        }
     }
 
     /**
@@ -79,6 +79,45 @@ class Gender
         return $this->hisher;
     }
 
+    /**
+     * Setter
+     * 
+     * @return this object
+     */
+    public function setHisHer($var)
+    {
+        $this->hisher = $var;
+    }
+
+    /**
+     * Setter
+     * 
+     * @return this object
+     */
+    public function setHeShe($var)
+    {
+        $this->hisher = $var;
+    }
+
+    /**
+     * Setter
+     * 
+     * @return this object
+     */
+    public function setManWoman($var)
+    {
+        $this->hisher = $var;
+    }
+
+    /**
+     * Setter
+     * 
+     * @return this object
+     */
+    public function setGender($var)
+    {
+        $this->hisher = $var;
+    }
 }
 
 /*

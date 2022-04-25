@@ -14,8 +14,9 @@ class aasimar extends Name
     public function __construct($dndrace, $new_npc)
     {
         $dndrace = self::isFallen($dndrace);
+        $biography = new human($dndrace, $new_npc);
         $this->isAasimar = true;
-        $this->lastname = self::_lastname();
+        $this->lastname = $biography->getLastName();
         $this->firstname = self::_firstname($new_npc);
         $this->nickname = $this->firstname;
         $this->description = self::_description($dndrace, $new_npc, $this->nickname);
