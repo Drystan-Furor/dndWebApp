@@ -110,6 +110,7 @@ class Prosperous
             'who seems to be doing well',
         ];
         $intro = array_rand(array_flip($wealthinessTypes), 1);
+        $intro .= ". ";
         return $intro;
     }
 

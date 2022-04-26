@@ -127,6 +127,7 @@ class Rich
             'who seems to be on top of the heap',
         ];
         $intro = array_rand(array_flip($intros), 1);
+        $intro .= ". ";
         return $intro;
     }
 

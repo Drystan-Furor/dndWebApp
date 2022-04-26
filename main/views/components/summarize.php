@@ -1,4 +1,9 @@
 <div class="summarize">
+    <p class="centertext">
+        To facilitate homebrew you have the option to enter your custom race name, or choose to enter a race name from the <a href="https://www.dndbeyond.com/races">DnD Beyond races</a>. <br>
+        If nothing is entered the generator randomly chooses
+        one of the <a href="https://www.dndbeyond.com/races">DnD Beyond races</a>.
+    </p>
     <p>
         It is a work in progress, for now it generates :
     <ul>

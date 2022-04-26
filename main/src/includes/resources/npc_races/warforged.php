@@ -1,176 +1,7 @@
 <?php
-// Warforged
-
-//----------------------NO WEALTH---------------------------Warforged
-$beggar = false;
-$prosperous = false;
-$rich = false;
-$loaded = false;
-$poor = false;
-$outfit = ''; //strip naked, no wardrobe
-
-// wear belts?
-
-
-
-/**
- ------------------------------------------------------------------------scars--DAMAGED
- */
-$dents = [
-    'indentation',
-    'incline',
-    'dent',
-    'scratch',
-    'scrape',
-    'chip',
-    'perforation',
-    'claw mark',
-];
-$dent = array_rand($dents, 5);
-
-$scarlines = [
-    "horizontal " . $dents[$dent[0]],
-    "vertical " . $dents[$dent[1]],
-    $dents[$dent[2]],
-    "diagonal " . $dents[$dent[3]] . ", from the left to the right",
-    "diagonal " . $dents[$dent[4]] . ", from the right to the left",
-];
-//scarsides
-//scarlocations
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- ---------------------------------------------------------------------------------------BODY
- */
-
-
-
-$bodytypes = [ //------------------------------------------------------BODY TYPES
-    "primarily as an Android",
-    "primarily as an Automaton",
-    "as a Cyborg",
-    "primarily as a Humanoid robot",
-    "as a Replicant",
-    "primarily as a Synthoid",
-    "as a Gynoid",
-    "primarily as an interpersonal communications model",
-    "primarily as a Mechanoid",
-    "primarily as a Maschinenmensch",
-];
-$bodytype = array_rand(array_flip($bodytypes), 1);
-
-//self::connections()bodyparts()spareparts()
-
-//---------------------------------------------------------------BODY SHAPE
-// with ...
-$spareparts = warforged::spareparts();
-$sparePart = array_rand($spareparts, 4);
-
-$bodyparts = warforged::bodyparts();
-$bodypart = array_rand($bodyparts, 2);
-
-$bodyshape = $spareparts[$sparePart[0]] . " together with " .
-    $spareparts[$sparePart[1]] . " in it's " .
-    $bodyparts[$bodypart[0]] . " while his " .
-    $bodyparts[$bodypart[1]] . " has " .
-    $spareparts[$sparePart[2]] . " along with " .
-    $spareparts[$sparePart[3]];
-/**
- ---------------------------------------------------------------------------------------BODY
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /** 
-//-----------------------------------------------------------------$WARFORGED
- */
-$connection = array_rand(self::connections(), 2);
-
-
-$description = $this->nickname . " has a skeletal frame made of " . 
-MaterialGenerator::getWoodType() . " wood. 
-It's parts and joints are all conected and held together with "
-    . $connections[$connection[0]] . " and "
-    . $connections[$connection[1]] . ". ";
-
-//-------------------------------------------------------------------------------
-$spareparts = self::spareparts();
-$sparePart = array_rand($spareparts, 3);
-$bodyparts = self::bodyparts();
-$bodypart = array_rand($bodyparts, 2); // making mistakes
-
-
-$description .= "Both it's " . $bodyparts[$bodypart[0]] .
-    " and $nickname's " . $bodyparts[$bodypart[1]] . " have visible innards, showing 
-    either " . VerbsGenerator::maintenance() . " or " . VerbsGenerator::maintenance() .
-    " " . $spareparts[$sparePart[0]] . ", " . $spareparts[$sparePart[1]] . " and "
-    . $spareparts[$sparePart[2]] . ". ";
-
-
-
-
-
-
-
-
-
-//--------------------------------------------------------------------large sentence
-
-
-
-
-/** 
-//-----------------------------------------------------------------$WARFORGED 2
- */
-$description .= " The robot has " .
-    VerbsGenerator::maintenance() . " " .                       //maintained
-    MaterialGenerator::getPlateType() . " plating on it's " .    //plating
-    $bodyparts[$bodypart[2]] . " and " .                     // on arms
-    $bodyparts[$bodypart[3]] . ", while the " .             // and legs
-    MaterialGenerator::getPlateType() . " armor " . $this->nickname . " wears on it's " . //plating
-    $bodyparts[$bodypart[1]] . " looks pretty " .            //on chest
-    VerbsGenerator::maintenance() . ". " . $this->lastname . " even has " .   //is maintained
-    MaterialGenerator::getPlateType() . " plating on it's " .     //plating on head
-    $bodyparts[$bodypart[4]] . ", however that armor plate is 
-    enameled with a durable vitreous " . MaterialGenerator::getEnamelType() . " coating. "; // has enameling
-
-
-
-
-
-
-
-
-
-
-
-
-/** 
- * Default Names
+ * Warforged 
  */
 class warforged extends Name
 {
@@ -327,9 +158,6 @@ class warforged extends Name
      */
     private function _description($dndrace, $new_npc, $origin)
     {
-        $description = "string " . $dndrace->getRace() .
-            " string " . $this->lastname . " string " . $new_npc->getHisHer() .
-            " string.";
 
         //-------------------------------------------PEOPLE
         $peoples = [
@@ -350,21 +178,75 @@ class warforged extends Name
         //randomly addressed
 
         //description 1 [DEFAULT]
-        $description = $people . " of " . $this->lastname . " " .
+        $description = ucfirst($people) . " of " . $this->lastname . " " .
             VerbsGenerator::named() . " "
-            . $theRobot . ' as ' . $this->nickname;
+            . $theRobot . ' as ' . $this->nickname . ". ";
 
         //'it picked itself a nickname: '
         //------------------------------------------THE ROBOT NAMED THE ROBOT [5%]
         $isItNamed = rand(1, 20);
         if ($isItNamed == 1) {
             //description 2 [ELSE && 5% Chance]
-            $description = 'the robot has retained ' . $new_npc->getHisHer() .
-                ' original designation ' . $this->lastname;
+            $description .= 'The robot has retained ' . $new_npc->getHisHer() .
+                ' original designation ' . $this->lastname . ". ";
         }
 
 
-        $description .=  " There is a a ghulra " . self::engraved() . " " .
+        /** 
+        //-------------------------$WARFORGED
+         */
+        //-------------get array's
+        $spareparts = self::spareparts();
+        $sparePart = array_rand($spareparts, 3);
+        $bodyparts = self::bodyparts();
+        $bodypart = array_rand($bodyparts, 5);
+        $connections = self::connections();
+        $connection = array_rand($connections, 2);
+        $belt = new Belts();
+        $belt = $belt->getBelt();
+
+
+        $description .= $this->nickname . " has a skeletal frame made of " .
+            MaterialGenerator::getWoodType() . " wood. 
+            It's parts and joints are all conected and held together with "
+            . $connections[$connection[0]] . " and "
+            . $connections[$connection[1]] . ". " .
+            "Both it's " . $bodyparts[$bodypart[0]] .
+            " and " . $this->nickname . "'s " . $bodyparts[$bodypart[1]] .
+            " have visible innards, showing 
+            either " . VerbsGenerator::maintenance() . " or "
+            . VerbsGenerator::maintenance() .
+            " " . $spareparts[$sparePart[0]] . ", "
+            . $spareparts[$sparePart[1]] . " and "
+            . $spareparts[$sparePart[2]] . ". ";
+
+
+        /** 
+        //------------------------------------$WARFORGED 2
+         */
+        $description .= " The robot has " .
+            VerbsGenerator::maintenance() . " " .                      //maintained
+            MaterialGenerator::getPlateType() . " plating on it's " . //plating
+            $bodyparts[$bodypart[2]] . " and " .                     // on arms
+            $bodyparts[$bodypart[3]] . ", while the " .             // and legs
+            MaterialGenerator::getPlateType() . " armor " . $this->nickname
+            . " wears on it's " .                                   //plating
+            $bodyparts[$bodypart[1]] . " looks pretty " .          //on chest
+            VerbsGenerator::maintenance() . ". " . $this->lastname .
+            " even has " .                                      //is maintained
+            MaterialGenerator::getPlateType() .
+            " plating on it's " .                           //plating on head
+            $bodyparts[$bodypart[4]] . ", however that armor plate is 
+            enameled with a durable vitreous "
+            . MaterialGenerator::getEnamelType() . " coating. "; // has enameling
+
+        $description .= ucfirst($new_npc->getHeShe()) . " wears a " . $belt . ". ";
+
+
+        /**
+         ----------------------Gulhra
+         */
+        $description .=  "There is a a ghulra " . self::engraved() . " " .
             $this->lastname . "'s forehead that " .
             VerbsGenerator::getIndicator() . " that the living 
             construct served as a " . self::functions() . " in the Last War.";
@@ -375,15 +257,21 @@ class warforged extends Name
     /**
      * -------------------------------------ARRAY'S
      */
+    /**
+     * Array
+     * 
+     * @return array
+     */
     public static function spareparts()
     {
         $spareparts = [ //-----------------------------inorganic---spare-parts
-            'cylinders', 'pistons', 'clockwork parts', 'cogs', 'gears', 'pinions',
-            'shafts', 'valves', 'bearings', 'springs', 'cogwheels', 'pneumatics',
-            'connecting rods', 'poppet valves', 'sleeve valves', 'rotary valves',
-            'axles', 'manifolds', 'servosystems', 'actuators', 'telemetrical instruments',
+            'cylinders', 'pistons', 'clockwork parts', 'cogs', 'gears',
+            'pinions', 'pneumatics', 'rotary valves', 'telemetrical instruments',
+            'shafts', 'valves', 'bearings', 'springs', 'cogwheels',
+            'connecting rods', 'poppet valves', 'sleeve valves',
+            'axles', 'manifolds', 'servosystems', 'actuators', 'ultrasonic actuators',
             'tactile sensors', 'locomotion systems', 'animatronics', 'cybernetics',
-            'orthotics', 'prosthetics', 'proprioceptive sensors', 'ultrasonic actuators',
+            'orthotics', 'prosthetics', 'proprioceptive sensors',
             'pneumatic actuators', 'bolts', 'screws', 'nails', 'metal wires',
         ];
         return $spareparts;
@@ -391,6 +279,11 @@ class warforged extends Name
 
 
     //---------------------------------------------------------bodyparts
+    /**
+     * Array
+     * 
+     * @return array
+     */
     public static function bodyparts()
     {
         $bodyparts = [
@@ -401,6 +294,11 @@ class warforged extends Name
         return $bodyparts;
     }
 
+    /**
+     * Array
+     * 
+     * @return array
+     */
     public static function connections()
     {
         //----------------------------------------------------------------connections      
@@ -411,7 +309,7 @@ class warforged extends Name
             'braided roots', 'braided vines', 'braided thorny vines', 'rags',
             'cloth wraps',
         ];
-        return $connections;//self::connections()bodyparts()spareparts()
+        return $connections; //self::connections()bodyparts()spareparts()
     }
     /**
      * Guhlra
@@ -502,7 +400,7 @@ class warforged extends Name
      */
     public static function noseReplacer()
     {
-        $nose = "no nose.";
+        $nose = "no nose";
 
         return $nose;
     }
@@ -588,22 +486,6 @@ class warforged extends Name
     /**
      * Array of replacer
      * 
-     * @return age replacer
-     */
-    public static function ageReplacer($dndrace)
-    {
-        if ($dndrace == "Deep Gnome") {
-            $age = rand(14, 250);
-            return $age;
-        } else {
-            $age = rand(14, 425);
-            return $age;
-        }
-    }
-
-    /**
-     * Array of replacer
-     * 
      * @return Bodysize replacer
      */
     public static function bodySizeReplacer()
@@ -619,5 +501,53 @@ class warforged extends Name
         ];
         $bodysize = array_rand(array_flip($bodysizes), 1);
         return $bodysize;
+    }
+
+    /**
+     * Array of replacer
+     * 
+     * @return BodyType replacer
+     */
+    public static function bodyTypeReplacer()
+    {
+        $bodytypes = [ //------------------BODY TYPES
+            "primarily as an Android",
+            "primarily as an Automaton",
+            "as a Cyborg",
+            "primarily as a Humanoid robot",
+            "as a Replicant",
+            "primarily as a Synthoid",
+            "as a Gynoid",
+            "primarily as an interpersonal communications model",
+            "primarily as a Mechanoid",
+            "primarily as a Maschinenmensch",
+        ];
+        $bodytype = array_rand(array_flip($bodytypes), 1);
+        return $bodytype;
+    }
+
+
+    /**
+     * Array of replacer
+     * 
+     * @return BodyShape replacer
+     */
+    public static function bodyShapeReplacer()
+    {
+        //-------------------------------BODY SHAPE
+        // with ...
+        $spareparts = warforged::spareparts();
+        $sparePart = array_rand($spareparts, 4);
+
+        $bodyparts = warforged::bodyparts();
+        $bodypart = array_rand($bodyparts, 2);
+
+        $bodyshape = $spareparts[$sparePart[0]] . " together with " .
+            $spareparts[$sparePart[1]] . " in it's " .
+            $bodyparts[$bodypart[0]] . " while his " .
+            $bodyparts[$bodypart[1]] . " has " .
+            $spareparts[$sparePart[2]] . " along with " .
+            $spareparts[$sparePart[3]];
+        return $bodyshape;
     }
 }

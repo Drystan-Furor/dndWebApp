@@ -102,6 +102,7 @@ class Loaded
             'who makes a real aristocratic impression',
         ];
         $intro = array_rand(array_flip($wealthinessTypes), 1);
+        $intro .= ". ";
         return $intro;
     }
 

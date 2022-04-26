@@ -118,11 +118,11 @@ class DndNpcRng
         $this->mood = $this->mood->getMood();
 
         //scars 
-        $this->scar = new ScarsGenerator($this->new_npc);
+        $this->scar = new ScarsGenerator($this->dndrace, $this->new_npc);
         $this->scar1 = $this->scar->getScar();
-        $this->scar = new ScarsGenerator($this->new_npc);
+        $this->scar = new ScarsGenerator($this->dndrace, $this->new_npc);
         $this->scar2 = $this->scar->getScar();
-        $this->scar = new ScarsGenerator($this->new_npc);
+        $this->scar = new ScarsGenerator($this->dndrace, $this->new_npc);
         $this->scar3 = $this->scar->getScar();
 
         //npc_wardrobe-by-wealth +npc_wardrobe
@@ -169,7 +169,6 @@ class DndNpcRng
      */
     private function _writeStory()
     {
-        var_dump($this->dndrace);
         //BioName
         $string =  "You meet " . $this->firstname . " " . $this->lastname . ". ";
         // {generrateee npc, getRace call script get name}
@@ -183,8 +182,8 @@ class DndNpcRng
         $string .= "A " . $this->size . " " .
             $this->gender . " " .
             $this->dndrace  . " " . $this->npcClass
-            . " thats about " . $this->age . " years old, " .
-            $this->intro . ". " .
+            . " thats about " . $this->age . " years old. " .
+            ucfirst($this->intro) . 
             $this->description . " " .
             //-----------------------------facial construction
             /* You SEE this MAN has NOSE. 

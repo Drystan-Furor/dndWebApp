@@ -106,6 +106,7 @@ class Poor
             'who looks underpriviliged', 'who makes a down-and-out impression',
         ];
         $intro = array_rand(array_flip($wealthinessTypes), 1);
+        $intro .= ". ";
         return $intro;
     }
 

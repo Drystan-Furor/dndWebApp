@@ -101,6 +101,7 @@ class Beggar
             'who is regarded as a deadbeat', 'who looks like a real hobo',
         ];
         $intro = array_rand(array_flip($wealthinessTypes), 1);
+        $intro .= ". ";
         return $intro;
     }
 
