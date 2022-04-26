@@ -4,9 +4,7 @@
     <label for="collapsible<?php echo $i;?>" class="lbl-toggle"><?php echo $label;?></label>
     <div class="collapsible-content">
         <div class="content-inner">
-            <div class="introparagraph">
                 <?php echo $collapsibleContent; ?>
-            </div>
         </div>
     </div>
 </div>

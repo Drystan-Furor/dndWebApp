@@ -6,7 +6,7 @@
     <?php include 'components/menulist.php'; ?>
 
     <div class="adminpages-container">
-        <h1>Admin Pages</h1>
+        <h1 class="centertext">Admin Pages</h1>
 
         <div class="adminpages">
             <table>

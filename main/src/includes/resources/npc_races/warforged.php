@@ -334,9 +334,10 @@ class warforged extends Name
     public static function functions()
     {
         $functions = [
-            'Combat Medic', 'Artillery Loader', 'Scout', 'Guard', 'Militia', 'Archer',
-            'heavy lifter', 'Landsknect', 'Musketeer', 'Longbowman', 'Lancer', 'Cataphract',
-            'Janissary', 'Foot Soldier', 'Dragoon', 'Constable', 'Yeoman', 'Infantry',
+            'Combat Medic', 'Artillery Loader', 'Scout', 'Guard', 'Militia',
+            'Archer', 'Cataphract', 'Infantry',
+            'heavy lifter', 'Landsknecht', 'Musketeer', 'Longbowman', 'Lancer',
+            'Janissary', 'Foot Soldier', 'Dragoon', 'Constable', 'Yeoman',
             'Pikeman', 'Catapult Loader', 'Ballista Loader', 'Trebuchet Engineer',
             'Sapper', 'Spy', 'Cannonier', 'Juggernaut', 'Envoy', 'Skirmisher',
             'Sentry', 'Marine', 'City Watch', 'Soldier', 'Investigator', 'Sailor',
@@ -438,12 +439,13 @@ class warforged extends Name
         $chincurve = array_rand(array_flip($chincurves), 1);
 
         $chinshapes = [
-            'a rather ', 'quite the', 'a very defined', 'a puffed',
-            'a very protruding', 'a bulbous', 'a very small', 'a bit of a',
+            'a rather ', 'quite the', 'a very defined',
+            'a very protruding', 'a very small', 'a bit of a',
         ];
         $chinshape = array_rand(array_flip($chinshapes), 1);
 
-        $chin = $chinshape . " " . $chincurve . " culmen";
+        $chin = $chinshape . " " . $chincurve . " "
+            . MaterialGenerator::getMetalType() . " chin. ";
 
         return $chin;
     }
@@ -455,8 +457,6 @@ class warforged extends Name
      */
     public static function teethReplacer()
     {
-        $metal = MaterialGenerator::getMetalType();
-
         $dentalwork = [
             "has no teeth", "is not designed with teeth",
             "has several " . MaterialGenerator::getMetalType() . " nails as teeth",

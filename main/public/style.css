@@ -68,7 +68,7 @@ body {
     top: 0px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: -10px;
+    margin-bottom: 20px;
     font-size: 18px;
     width: 100%;
 }
@@ -90,22 +90,23 @@ body {
 
 .logoutcontainer {
     z-index: 2;
+    font-family: "Courier New", monospace, serif;
     position: relative;
     display: block;
     margin-left: auto;
     margin-right: 16px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: -20px;
+    /*margin-bottom: 5px;*/
     width: 10%;
-    font-family: Copperplate, Fantasy, serif;
+    /*font-family: Copperplate, Fantasy, serif;*/
     /*text-shadow: 2px 2px;*/
-    font-size: 80%;
+    font-size: 70%;
     color: #45CEF7;
     text-align: center;
     background-color: rgb(15, 15, 15);
     border: 3px solid #EE8600;
     border-radius: 50px;
-    margin-bottom: 1px;
 }
 
 .logoutcontainer a:link,
@@ -129,7 +130,7 @@ body {
     border: 15px solid rgb(15, 15, 15);
     border-radius: 0 0 0 0;
     margin-bottom: -10px;
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 .whitetext {
@@ -175,15 +176,19 @@ body {
     border-radius: 50px;
 }
 
+.centeredpar-container {
+    position: relative;
+}
+
 .centeredpar {
+    display: block;
     text-align: center;
-    margin-left: 5%;
-    margin-right: 5%;
-    position: absolute;
-    padding-bottom: 10%;
-    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
     margin-top: 20px;
-    width: 90%;
+    padding: 2%;
+    width: 80%;
     font-size: 80%;
     background-color: white;
     border: 3px solid #EE8600;
@@ -228,7 +233,7 @@ body {
     border: 3px solid #EE8600;
     border-radius: 50px;
     margin-bottom: 10px;
-    margin-top: 10%;
+    margin-top: 5%;
     border-radius: 50px;
 }
 
@@ -328,11 +333,11 @@ body {
 /*--------------------------buttons-------------*/
 
 .submitbutton {
-    background-color: #767676;
-    color: rgb(9, 129, 35);
+    background-color: rgb(9, 129, 35);
+    color: #EE8600;
     padding: 3px;
     font-family: Copperplate, Fantasy, serif;
-    border: 3px solid rgb(9, 129, 35);
+    border: 3px solid #EE8600;
     border-radius: 50px;
     font-size: 120%;
     text-align: center;
@@ -349,14 +354,14 @@ body {
 
 .adminpages-container {
     position: relative;
+    margin-top: 3%;
 }
 
 .adminpages {
     margin-left: 5%;
     margin-right: 5%;
-    position: absolute;
     padding-bottom: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 3%;
     margin-top: 20px;
     width: 80%;
     font-size: 80%;
@@ -377,36 +382,27 @@ body {
 
 /* footer -----------------------------------------------------------------------------*/
 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+
 .footer-container {
     position: relative;
-    bottom: -webkit-calc(-100% + 4px);
-}
-
-
-/*
-footer {
-    background-color: #767676;
-    color: #45CEF7;
-    padding: 5px 0 15px 15px;
-    border: 1px solid white;
-    border-radius: 50px 50px 0 0;
-    font-size: 60%;
-    text-align: center;
-    left: 0;
+    /*bottom: -webkit-calc(-100% + 4px);*/
+    bottom: 0;
     width: 100%;
-    margin: 10% 0 0 0;
-    position: fixed;
-    bottom: 0px;
 }
 
-footer a:link,
-footer a:visited {
-    color: rgb(248, 4, 4);
-    text-decoration: none;
+.footer {
+    position: absolute;
+    width: 100%;
 }
-*/
 
 footer {
+    width: 100%;
     background-color: rgb(15, 15, 15);
     color: rgb(248, 4, 4);
     padding: 5px 0 15px 15px;
@@ -425,13 +421,6 @@ footer a:link,
 footer a:visited {
     color: rgb(248, 4, 4);
     text-decoration: none;
-}
-
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5%;
 }
 
 

@@ -4,7 +4,7 @@
   <body>
     <?php include 'components/menulist.php'; ?>
 
-      <h1>Page Edit View</h1>
+      <h1 class="centertext">Page Edit View</h1>
       <?php
         $formaction = "/admin/page/edit";
         $valueId = $params[0]->id;
@@ -12,5 +12,4 @@
         $valueContent = $params[0]->content;
         $valueSlug = $params[0]->slug;
         require 'components/actionform.php'; ?>
-
         <?php require 'components/footer.php'; ?>

@@ -2,20 +2,19 @@
 <?php require 'components/header.php'; ?>
 
 <body>
+        <?php include 'components/menulist.php'; ?>
+        <div class="centeredpar-container">
+        <?php if ($params[0]->status === 'published') : ?>
 
-    <?php include 'components/menulist.php'; ?>
+            <h1 class="centertext"><?php echo $params[0]->title; ?></h1>
 
-    <?php if ($params[0]->status === 'published') : ?>
+            <div>
+            <p class="centeredpar"><?php echo $params[0]->content; ?></p>
+            </div>
+        <?php else : ?>
 
-        <h1><?php echo $params[0]->title; ?></h1>
+            <h1>Deze pagina is nog niet gepubliceerd..</h1>
 
-        <p class="centeredpar"><?php echo $params[0]->content; ?></p>
-
-    <?php else : ?>
-
-        <h1>Deze pagina is nog niet gepubliceerd..</h1>
-
-    <?php endif; ?>
-
-    <img src="/images/Dungeons-Dragons-Logo.png" alt="logo" width="400" />
+        <?php endif; ?>
+    </div>
     <?php require 'components/footer.php'; ?>

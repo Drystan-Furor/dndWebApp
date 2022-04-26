@@ -30,10 +30,3 @@ $collapsibleContent = '<p id="thisisit" class="centertext">
 <div class="greeting">
     <h3></h3>
 </div>
-
-
-
-<?php require 'commonraceform.php' ?>
-
-
-<?php require 'summarize.php' ?>

@@ -18,10 +18,11 @@
 
                 <button class="submitbutton" type="submit" value="Submit">Submit</button>
             </form>   
-        </div>
+        
     <?php if (isset($_SESSION['login_invalid'])) : ?>
 
         <p>Your credentials are incorrect. Please try again.</p>
 
     <?php endif; ?>
+    </div>
     <?php require 'components/footer.php'; ?>
