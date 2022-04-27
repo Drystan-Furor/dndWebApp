@@ -1,6 +1,9 @@
 <?php
+
 /**
  * Random set of eyes
+ * $eyes = new Eyes();
+ * $eyes = $eyes->getEyes();
  * 
  * @category Generators
  * @package  Profile
@@ -13,17 +16,19 @@ class Eyes
     /**
      * Construct eyeshapes an determine if blind or not
      * 
-     * @param $dndrace this race
+     * @param $dndrace string race
+     * @param $new_npc Gender
      */
     public function __construct($dndrace, $new_npc)
     {
-            $this->eyes = self::_eyeshape($dndrace, $new_npc);
+        $this->eyes = self::_eyeshape($dndrace, $new_npc);
     }
 
     /**
      * Build or choose specific arrray. Select random value string
      * 
-     * @param $dndrace this race
+     * @param $dndrace string race
+     * @param $new_npc Gender
      * 
      * @return eyes
      */
@@ -41,14 +46,14 @@ class Eyes
      * 
      * @return string
      */
-    public static function defaultEyeshape() 
+    public static function defaultEyeshape()
     {
         $eyeshapes = [
-            "squinty eyes", "big eyes", "small eyes", 
+            "squinty eyes", "big eyes", "small eyes",
             "fairly large eyes", "tired eyes",
-            "energetic eyes", "drowzy eyes", 
+            "energetic eyes", "drowzy eyes",
             "round eyes", "almond shaped eyes",
-            "wide set eyes", "close set eyes", 
+            "wide set eyes", "close set eyes",
             "prominent eyes", "downturned eyes",
             "upturned eyes", "deep set eyes", "droopy eyes",
             "monolid eyes",
@@ -69,8 +74,8 @@ class Eyes
     public static function canSee()
     {
         $eyes = self::defaultEyeshape();
-        $hasEyes = rand(1, 100); 
-        if ($hasEyes == 1) { 
+        $hasEyes = rand(1, 100);
+        if ($hasEyes == 1) {
             $eyes = 'empty eye sockets, eyes gauged out';
         } else if ($hasEyes >= 2 && $hasEyes <= 10) {
             $blindeye = [
@@ -79,7 +84,7 @@ class Eyes
             ];
             $blindness = array_rand(array_flip($blindeye), 1);
             $eyes .= $blindness;
-        }  
+        }
         return $eyes;
     }
 
@@ -87,14 +92,10 @@ class Eyes
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
-    public function getEyes() 
+    public function getEyes()
     {
         return $this->eyes;
     }
 }
-/*
-$eyes = new Eyes();
-$eyes = $eyes->getEyes();
-*/

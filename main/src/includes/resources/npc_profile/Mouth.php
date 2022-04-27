@@ -1,7 +1,16 @@
 <?php
+
 /**
  * Mouth generator 
- */ 
+ * $mouth = new Mouth();
+ * $mouth = $mouth->getMouth();
+ * 
+ * @category Generators
+ * @package  Profile
+ * @author   Tristan Arts <ArtsTristan@gmail.com>
+ * @license  tristan 
+ * @link     https://drystan-furor.github.io/Portfolio/
+ */
 
 class Mouth
 {
@@ -9,7 +18,8 @@ class Mouth
     /**
      * Constuct = select random value string
      * 
-     * @param $dndrace this race
+     * @param $dndrace string race
+     * @param $new_npc Gender
      */
     public function __construct($dndrace, $new_npc)
     {
@@ -19,7 +29,7 @@ class Mouth
     /**
      * Array of default values for Mouth
      * 
-     * @return default single string of mouths
+     * @return string of mouths
      */
     public static function defaultMouths()
     {
@@ -27,15 +37,16 @@ class Mouth
             "full lips", "round lips", "bow shaped lips", "heavy lower lips",
             "heart shaped lips", "heavy upper lips", "wide lips", "thin lips",
             "downward turned lips", "perfectly proportioned lips",
-            ];
-            $mouth = array_rand(array_flip($mouthshape), 1);
-            return $mouth;
+        ];
+        $mouth = array_rand(array_flip($mouthshape), 1);
+        return $mouth;
     }
 
     /**
      * Build or choose specific arrray. Select random value string
      * 
-     * @param $dndrace this race
+     * @param $dndrace string race
+     * @param $new_npc Gender
      * 
      * @return mouth
      */
@@ -46,20 +57,16 @@ class Mouth
         } else {
             $this->mouth = self::defaultMouths();
         }
+        return $this->mouth;
     }
 
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getMouth()
     {
         return $this->mouth;
     }
 }
-
-/*
-$mouth = new Mouth();
-$mouth = $mouth->getMouth();
-*/

@@ -2,6 +2,12 @@
 
 /**
  * Teeth
+ * 
+ * @category Generators
+ * @package  Profile
+ * @author   Tristan Arts <ArtsTristan@gmail.com>
+ * @license  tristan 
+ * @link     https://drystan-furor.github.io/Portfolio/
  */
 
 class Teeth
@@ -9,7 +15,8 @@ class Teeth
     /**
      * Grow some whiskers
      * 
-     * @param $dndrace this race
+     * @param $dndrace string race
+     * @param $new_npc Gender
      */
     public function __construct($dndrace, $new_npc)
     {
@@ -19,7 +26,7 @@ class Teeth
     /**
      * Array of DEFAULT types
      * 
-     * @return dentals
+     * @return string
      */
     private static function _teethTypes()
     {
@@ -79,8 +86,9 @@ class Teeth
     /**
      * Build or choose specific arrray. Select random value string
      * 
-     * @param $dndrace this race
-     * 
+     * @param $dndrace string race
+     * @param $new_npc Gender
+     *  
      * @return teeth
      */
     private static function _teethShape($dndrace, $new_npc)
@@ -96,7 +104,7 @@ class Teeth
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getTeeth()
     {

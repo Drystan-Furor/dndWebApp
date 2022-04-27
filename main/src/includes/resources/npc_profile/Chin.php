@@ -54,17 +54,16 @@ class Chin
      * @param $dndrace string race
      * @param $new_npc Gender male/female nouns
      * 
-     * @return object
+     * @return chin
      */
     private function _chinShape($dndrace, $new_npc)
     {
         if (method_exists(strtolower($dndrace), 'chinReplacer') == true) {
             $this->chin = strtolower($dndrace)::chinReplacer($dndrace, $new_npc);
-            return $this->chin;
         } else {
             $this->chin = self::defaultChin();
-            return $this->chin;
         }
+        return $this->chin;
     }
 
     /**

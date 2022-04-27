@@ -7,15 +7,24 @@
  * mouth
  * teeth
  * chin
+ * 
+ * $new_profile = new ProfileGenerator();
+ * $new_profile->getEyes(); etc.
+ * 
+ * @category Generators
+ * @package  Profile
+ * @author   Tristan Arts <ArtsTristan@gmail.com>
+ * @license  tristan 
+ * @link     https://drystan-furor.github.io/Portfolio/
  */
 class ProfileGenerator
 {
     /**
      * Constructor
      * 
-     * @param $dndrace this race
-     * @param $new_npc the male/female nouns
-     * @param $class   this class
+     * @param $dndrace string race
+     * @param $new_npc Gender male/female nouns
+     * @param $class   NpcClass class
      */
     public function __construct($dndrace, $new_npc, $class)
     {
@@ -27,7 +36,7 @@ class ProfileGenerator
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getChin()
     {
@@ -37,7 +46,7 @@ class ProfileGenerator
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getEyes()
     {
@@ -47,7 +56,7 @@ class ProfileGenerator
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getMouth()
     {
@@ -57,7 +66,7 @@ class ProfileGenerator
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getNose()
     {
@@ -67,7 +76,7 @@ class ProfileGenerator
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getTeeth()
     {
@@ -77,7 +86,7 @@ class ProfileGenerator
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getFace()
     {
@@ -88,9 +97,9 @@ class ProfileGenerator
     /**
      * Facial Construction
      * 
-     * @param $dndrace this race
-     * @param $new_npc the male/female nouns
-     * @param $class   this class
+     * @param $dndrace string race
+     * @param $new_npc Gender male/female nouns
+     * @param $class   NpcClass class
      * 
      * @return string
      */
@@ -122,7 +131,7 @@ class ProfileGenerator
             " this " . $manWoman . " has " . $this->nose . //see nose
 
             ". The " . $class . " meets your gaze with " .
-            $this->eyes . ". " .// see eyes
+            $this->eyes . ". " . // see eyes
 
             "As you seize up the " . $manWoman . ", you " .
             VerbsGenerator::getObservation() . " " . $heshe . " has " .
@@ -137,8 +146,3 @@ class ProfileGenerator
         return $face;
     }
 }
-
-/*
-$new_profile = new ProfileGenerator();
-$new_profile->getEyes(); etc.
-*/
