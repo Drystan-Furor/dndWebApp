@@ -3,6 +3,12 @@
 /** 
  * Gender RNG
  * Gender Vars and Person Pronounce
+ * 
+ * @category Generators
+ * @package  Properties
+ * @author   Tristan Arts <ArtsTristan@gmail.com>
+ * @license  tristan 
+ * @link     https://drystan-furor.github.io/Portfolio/
  */
 class Gender
 {

@@ -11,6 +11,12 @@
  * 
  * Only the designated Race Class is called upon 
  * All other Race Classes remain unused on 1 instance of rng npc.
+ * 
+ * @category Generators
+ * @package  Properties
+ * @author   Tristan Arts <ArtsTristan@gmail.com>
+ * @license  tristan 
+ * @link     https://drystan-furor.github.io/Portfolio/
  */
 class Name extends Race
 {
@@ -32,7 +38,7 @@ class Name extends Race
         $this->biography = self::_generateName($dndrace, $new_npc, $array, $age, $origin);
     } //object name exists
 
-    
+
     /**
      * Name based on Race
      * Check if Homebrew
@@ -43,11 +49,11 @@ class Name extends Race
      * 
      * @return raceClass()
      */
-    private function _generateName($dndrace, $new_npc, $array, $age, $origin) 
+    private function _generateName($dndrace, $new_npc, $array, $age, $origin)
     {
         //address the exceptions of races first
         if (Homebrew::isHomebrew($dndrace->getRace(), $array) == true) {
-            $raceName = Race::setHeritage(); 
+            $raceName = Race::setHeritage();
             //Homebrews get a RNG origin to generate names
         } else {
             $raceName = $dndrace->getRace();

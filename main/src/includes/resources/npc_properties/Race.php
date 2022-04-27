@@ -1,17 +1,13 @@
 <?php
 
 /**
-Racegenerator
- */
-//require_once 'functions.php';
-
-/** 
-  Race
-  vars:     $dndrace        [string]    {random} from [array]
-            $raceorigin     [string]    {random} from [array] && [==$dndrace]
-            $heritage       [string]    {random} from [array] && !exceptions
-            $race           [string]    [var] FROM [filter]{input}
-
+ * Racegenerator
+ *
+ * @category Generators
+ * @package  Properties
+ * @author   Tristan Arts <ArtsTristan@gmail.com>
+ * @license  tristan 
+ * @link     https://drystan-furor.github.io/Portfolio/
  */
 
 class Race
@@ -29,7 +25,9 @@ class Race
         $this->dndrace = Homebrew::setHomebrew();
         $this->raceorigin = self::setHeritage();
         $this->racesBaseArray = self::raceArray();
-        $this->racesArray = self::_updateRaceArray($this->dndrace, $this->racesBaseArray);
+        $this->racesArray = self::_updateRaceArray(
+            $this->dndrace, $this->racesBaseArray
+        );
     }
 
 
@@ -58,7 +56,7 @@ class Race
     /**
      * Setter
      * 
-     * @param $dndrace the race to set
+     * @param $dndrace string race to set
      * 
      * @return string
      */
@@ -91,7 +89,7 @@ class Race
     /**
      * Get 1 random value of the whole raceArray
      * 
-     * @return random value of raceArray
+     * @return string random value of raceArray
      */
     public static function randomFromRaceArray()
     {
@@ -104,7 +102,7 @@ class Race
     /**  
      * Function _randomRace() sets both Race and Origin to the Race Default
      * 
-     * @return DEFAULT race
+     * @return string race DEFAULT
      */
     public static function randomRace()
     {
@@ -121,7 +119,7 @@ class Race
      * ancestors of the same type. All exceptions listed here are
      * races that should not have direct ancestors of the same type. 
      * 
-     * @return origin
+     * @return string
      */
     public static function setHeritage()
     {
@@ -140,7 +138,7 @@ class Race
     /**
      * Is Race in race array?
      * 
-     * @param $dndrace this race
+     * @param $dndrace string race
      * 
      * @return boolean
      */
@@ -159,9 +157,9 @@ class Race
      * Turn "This-Race name" into thisracename
      * lowercase also strip dash and space
      * 
-     * @param $dndrace race name
+     * @param $dndrace string name
      * 
-     * @return lowercase name of race.
+     * @return string lowercase name of race.
      */
     public static function lowercase($dndrace)
     {
@@ -180,7 +178,7 @@ class Race
     /**
      * Getter to acces value of dndrace variable
      * 
-     * @return dndrace
+     * @return string
      */
     public function getRace()
     {
@@ -190,7 +188,7 @@ class Race
     /**
      * Getter to acces value of origin variable
      * 
-     * @return origin
+     * @return string
      */
     public function getRaceorigin()
     {
@@ -201,7 +199,7 @@ class Race
     /**
      * Getter to acces value of dndraces array
      * 
-     * @return dndraceArray
+     * @return array
      */
     public function getRaceArray()
     {
