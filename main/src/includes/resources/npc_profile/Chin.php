@@ -2,13 +2,22 @@
 
 /**
  * Random Chin
+ * $chin = new Chin();
+ * $chin = $chin->getChin();
+ * 
+ * @category Generators
+ * @package  Profile
+ * @author   Tristan Arts <ArtsTristan@gmail.com>
+ * @license  tristan 
+ * @link     https://drystan-furor.github.io/Portfolio/
  */
 class Chin
 {
     /**
      * Construct a chin
      * 
-     * @param $dndrace this race
+     * @param $dndrace string race
+     * @param $new_npc Gender
      */
     public function __construct($dndrace, $new_npc)
     {
@@ -18,7 +27,7 @@ class Chin
     /**
      * Arrays of strings Default Chins
      * 
-     * @return concatinated string
+     * @return string
      */
     public static function defaultChin()
     {
@@ -42,33 +51,29 @@ class Chin
     /**
      * Build or choose specific arrray. Select random value string
      * 
-     * @param $dndrace this race
-     * @param $new_npc the male/female nouns
+     * @param $dndrace string race
+     * @param $new_npc Gender male/female nouns
      * 
-     * @return chin
+     * @return object
      */
     private function _chinShape($dndrace, $new_npc)
     {
         if (method_exists(strtolower($dndrace), 'chinReplacer') == true) {
             $this->chin = strtolower($dndrace)::chinReplacer($dndrace, $new_npc);
+            return $this->chin;
         } else {
             $this->chin = self::defaultChin();
+            return $this->chin;
         }
     }
 
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getChin()
     {
         return $this->chin;
     }
 }
-
-/*
-$chin = new Chin();
-$chin = $chin->getChin();
-*/
-

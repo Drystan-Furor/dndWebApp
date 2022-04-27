@@ -2,6 +2,12 @@
 
 /**
  * How is the NPC build? DEFAULTS
+ * 
+ * @category Generators
+ * @package  Main
+ * @author   Tristan Arts <ArtsTristan@gmail.com>
+ * @license  tristan 
+ * @link     https://drystan-furor.github.io/Portfolio/
  */
 class BodiesGenerator
 {
@@ -9,8 +15,8 @@ class BodiesGenerator
     /**
      * Bodybuilder ;P
      * 
-     * @param $dndrace object Race
-     * @param $new_npc object Gender
+     * @param $dndrace string Race
+     * @param $new_npc Gender
      */
     public function __construct($dndrace, $new_npc)
     {
@@ -27,7 +33,6 @@ class BodiesGenerator
      */
     public static function bodyTypeDefault()
     {
-        //-----------------------------------------------------bodytypes
         $bodytypes = [
             "long and lean", "fat", "bulky", "muscular", "slender",
             "quite overweight", "with a delicate frame",
@@ -46,7 +51,6 @@ class BodiesGenerator
      */
     public static function bodyShapeDefault()
     {
-        //------------------------------------------------------bodyshape
         $bodyshapes = [ //with 
             "narrow shoulders and a narrow bust",
             "slim arms and a fairly defined waist",
@@ -67,8 +71,6 @@ class BodiesGenerator
      */
     public static function bodySizeDefault()
     {
-
-        //------------------------------------------------------bodysize COMMON
         $bodysizes = [
             "small", "quite small", "very small", "really small",
             "slightly smaller", "rather small", "reasonably small",
@@ -88,9 +90,9 @@ class BodiesGenerator
     /**
      * Gather from array, build sentence 
      * 
-     * @param $new_npc well of nouns
+     * @param $new_npc Gender of nouns
      * 
-     * @return this body
+     * @return string body
      */
     private function _bodyBuilder($new_npc)
     {
@@ -112,7 +114,7 @@ class BodiesGenerator
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getBodyType()
     {
@@ -122,7 +124,7 @@ class BodiesGenerator
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getBodyShape()
     {
@@ -143,7 +145,7 @@ class BodiesGenerator
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getBody()
     {
@@ -153,10 +155,10 @@ class BodiesGenerator
     /**
      * Build or choose specific arrray. Select random value string
      * 
-     * @param $dndrace this race
-     * @param $new_npc the male/female nouns
+     * @param $dndrace string Race
+     * @param $new_npc Gender 
      * 
-     * @return bodysize bodySize
+     * @return string bodySize
      */
     private function _bodySize($dndrace, $new_npc)
     {
@@ -173,10 +175,10 @@ class BodiesGenerator
     /**
      * Build or choose specific arrray. Select random value string
      * 
-     * @param $dndrace this race
-     * @param $new_npc the male/female nouns
+     * @param $dndrace string race
+     * @param $new_npc Gender male/female nouns
      * 
-     * @return bodyType bodySize
+     * @return string bodySize
      */
     private function _bodyType($dndrace, $new_npc)
     {
@@ -191,10 +193,10 @@ class BodiesGenerator
     /**
      * Build or choose specific arrray. Select random value string
      * 
-     * @param $dndrace this race
-     * @param $new_npc the male/female nouns
+     * @param $dndrace string race
+     * @param $new_npc Gender male/female nouns
      * 
-     * @return bodyShape bodySize
+     * @return string bodySize
      */
     private function _bodyShape($dndrace, $new_npc)
     {

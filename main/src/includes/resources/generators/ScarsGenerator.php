@@ -2,12 +2,21 @@
 
 /**
  * Scars
+ * 
+ * @category Generators
+ * @package  Main
+ * @author   Tristan Arts <ArtsTristan@gmail.com>
+ * @license  tristan 
+ * @link     https://drystan-furor.github.io/Portfolio/
  */
 class ScarsGenerator
 {
 
     /**
      * Give me a scar, 50% chance
+     * 
+     * @param $dndrace string
+     * @param $new_npc Gender
      */
     public function __construct($dndrace, $new_npc)
     {
@@ -20,7 +29,7 @@ class ScarsGenerator
      * 
      * @return array
      */
-    public static function _dentMarkings()
+    private static function _dentMarkings()
     {
         $dents = [
             'indentation',
@@ -40,9 +49,9 @@ class ScarsGenerator
      * 
      * @return string
      */
-    public static function _dentLines()
+    public static function dentLines()
     {
-        $dents = ScarsGenerator::_dentMarkings();
+        $dents = self::_dentMarkings();
         $dent = array_rand($dents, 5);
 
         $scarlines = [
@@ -131,11 +140,11 @@ class ScarsGenerator
         return $location;
     }
 
-    //---------------------- full sentence
     /**
-     * Array
+     * Array string setter
      * 
-     * @param $new_npc = object from Overwatch Class
+     * @param $dndrace string
+     * @param $new_npc Gender
      * 
      * @return string
      */
@@ -161,7 +170,7 @@ class ScarsGenerator
                 }
                 $scar = "You " . VerbsGenerator::getObservation() . " " .
                     $new_npc->getHeShe() . " has a " .
-                    ScarsGenerator::_dentLines() . ' on the ' .
+                    ScarsGenerator::dentLines() . ' on the ' .
                     ScarsGenerator::scarSides() . ' of ' .
                     $new_npc->getHisHer() . " " .
                     $location . ". ";
@@ -176,7 +185,7 @@ class ScarsGenerator
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getScar()
     {

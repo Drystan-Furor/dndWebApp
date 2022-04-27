@@ -7,6 +7,12 @@
  *  $observe;
  *  $indicator;
  *  $length;
+ * 
+ * @category Generators
+ * @package  Main
+ * @author   Tristan Arts <ArtsTristan@gmail.com>
+ * @license  tristan 
+ * @link     https://drystan-furor.github.io/Portfolio/
  */
 class VerbsGenerator
 {

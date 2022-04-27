@@ -2,6 +2,12 @@
 
 /**
  * Emotion Getter
+ * 
+ * @category Generators
+ * @package  Main
+ * @author   Tristan Arts <ArtsTristan@gmail.com>
+ * @license  tristan 
+ * @link     https://drystan-furor.github.io/Portfolio/
  */
 class MoodGenerator
 {
@@ -16,7 +22,7 @@ class MoodGenerator
     /**
      * Array of Emotions
      * 
-     * @return emotion
+     * @return string
      */
     private static function _generateMoods()
     {
@@ -45,14 +51,15 @@ class MoodGenerator
     }
 
     /**
+     * Setter
      * Build a sentence around the mood
      * 
-     * @return mood
+     * @return string
      */
     private static function _generateMood($class)
-    {           //nickname
-        $mood = "The " . $class . " seems to be in a " . self::_generateMoods() . " mood.";
-
+    {
+        $mood = "The " . $class . " seems to be in a " 
+        . self::_generateMoods() . " mood.";
         return $mood;
     }
 
@@ -60,7 +67,7 @@ class MoodGenerator
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getMood()
     {

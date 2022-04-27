@@ -4,6 +4,13 @@
  * to generate full sentences inside arrays.
  * again take a random result from Array to 
  * write a short story, that is not to similar.
+ * $new_observation = SentenceGenerator::observing();
+ * 
+ * @category Generators
+ * @package  Main
+ * @author   Tristan Arts <ArtsTristan@gmail.com>
+ * @license  tristan 
+ * @link     https://drystan-furor.github.io/Portfolio/
  */
 class SentenceGenerator
 {
@@ -27,4 +34,3 @@ class SentenceGenerator
         return $observe;
     }
 }
-//$new_observation = SentenceGenerator::observing();

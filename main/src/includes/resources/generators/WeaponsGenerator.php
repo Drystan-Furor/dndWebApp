@@ -1,11 +1,19 @@
 <?php
 /**
  * Weapons
+ * 
+ * @category Generators
+ * @package  Main
+ * @author   Tristan Arts <ArtsTristan@gmail.com>
+ * @license  tristan 
+ * @link     https://drystan-furor.github.io/Portfolio/
  */
 class WeaponsGenerator
 {
     /**
      * Constructor
+     * 
+     * @param $dndrace string
      */
     public function __construct($dndrace)
     {
@@ -15,7 +23,7 @@ class WeaponsGenerator
     /**
      * Getter
      * 
-     * @return this object
+     * @return string object
      */
     public function getArms()
     {
@@ -45,7 +53,7 @@ class WeaponsGenerator
     /**
      * Array of weapons
      * 
-     * @return Weapon
+     * @return string
      */
     public static function weapon()
     {
