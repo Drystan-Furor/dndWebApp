@@ -183,11 +183,11 @@ class BodiesGenerator
     private function _bodyType($dndrace, $new_npc)
     {
         if (method_exists(strtolower($dndrace), 'bodyTypeReplacer') == true) {
-            $this->bodySize = strtolower($dndrace)::bodyTypeReplacer($dndrace, $new_npc);
+            $this->bodyType = strtolower($dndrace)::bodyTypeReplacer($dndrace, $new_npc);
         } else {
-            $this->bodySize = self::bodySizeDefault();
+            $this->bodyType = self::bodyTypeDefault();
         }
-        return $this->bodySize;
+        return $this->bodyType;
     }
 
     /**
@@ -201,10 +201,10 @@ class BodiesGenerator
     private function _bodyShape($dndrace, $new_npc)
     {
         if (method_exists(strtolower($dndrace), 'bodyShapeReplacer') == true) {
-            $this->bodySize = strtolower($dndrace)::bodyShapeReplacer($dndrace, $new_npc);
+            $this->bodyShape = strtolower($dndrace)::bodyShapeReplacer($dndrace, $new_npc);
         } else {
-            $this->bodySize = self::bodySizeDefault();
+            $this->bodyShape = self::bodyShapeDefault();
         }
-        return $this->bodySize;
+        return $this->bodyShape;
     }
 }
