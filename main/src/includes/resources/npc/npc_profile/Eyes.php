@@ -42,7 +42,7 @@ class Eyes
         return $this->eyes;
     }
     /**
-     * Array
+     * Array of eyeshapes
      * 
      * @return string
      */

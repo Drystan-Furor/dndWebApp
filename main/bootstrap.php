@@ -14,28 +14,39 @@ spl_autoload_register(function ($class) {
 */
 
 // autoload classes
-spl_autoload_register(function ($class) {
-    // class directories
-    $dir = array(
-        dirname(__FILE__) .  '/src/',
-        dirname(__FILE__) .  '/src/' . '/includes',
-        dirname(__FILE__) .  '/src/' . '/includes/resources',
-        dirname(__FILE__) .  '/src/' . '/includes/resources/generators',
-        dirname(__FILE__) .  '/src/' . '/includes/resources/npc_profile',
-        dirname(__FILE__) .  '/src/' . '/includes/resources/npc_properties',
-        dirname(__FILE__) .  '/src/' . '/includes/resources/npc_races',
-        dirname(__FILE__) .  '/src/' . '/includes/resources/npc_races/humanTypes',
-        dirname(__FILE__) .  '/src/' . '/includes/resources/npc_wardrobe',
-        dirname(__FILE__) .  '/src/' . '/includes/resources/npc_wardrobe-by-wealth',
-    );
+spl_autoload_register(
+    function ($class) {
+        // class directories
+        $dir = array(
+            dirname(__FILE__) .  '/src/',
+            dirname(__FILE__) .  '/src/' . '/includes',
+            dirname(__FILE__) .  '/src/' . '/includes/resources',
 
-    foreach ($dir as $path) {
-        $file = sprintf('%s/%s.php', $path, $class);
-        if (is_file($file)) {
-            require $file;
+
+            dirname(__FILE__) .  '/src/' . '/includes/resources/npc',
+            dirname(__FILE__) .  '/src/' . '/includes/resources/npc/generators',
+            dirname(__FILE__) .  '/src/' . '/includes/resources/npc/npc_profile',
+            dirname(__FILE__) .  '/src/' . '/includes/resources/npc/npc_properties',
+            dirname(__FILE__) .  '/src/' . '/includes/resources/npc/npc_races',
+            dirname(__FILE__) .  '/src/' . '/includes/resources/npc/npc_races/humanTypes',
+            dirname(__FILE__) .  '/src/' . '/includes/resources/npc/npc_wardrobe',
+            dirname(__FILE__) .  '/src/' . '/includes/resources/npc/npc_wardrobe-by-wealth',
+
+            dirname(__FILE__) .  '/src/' . '/includes/resources/dungeon',
+            dirname(__FILE__) .  '/src/' . '/includes/resources/wilderness',
+            dirname(__FILE__) .  '/src/' . '/includes/resources/tools',
+
+
+        );
+
+        foreach ($dir as $path) {
+            $file = sprintf('%s/%s.php', $path, $class);
+            if (is_file($file)) {
+                require $file;
+            }
         }
     }
-});
+);
 
 
 // Applicatie constanten
