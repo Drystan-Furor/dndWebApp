@@ -28,11 +28,6 @@ class Temperatures extends WeatherGenerator
     private function _temperature()
     {
         $temperatures = rand(1, 20);
-        $cs = "[Constitution Saving Throw (DC " . rand(1, 20) . ")]";
-        $exh = "[Gain one level of Exhaustion]";
-        $res = "resistance";
-        $imm = "immunity";
-
 
         if ($temperatures >= 15 && $temperatures <= 17) {
             $d4times10 = rand(1, 4) * 10;
@@ -40,8 +35,9 @@ class Temperatures extends WeatherGenerator
                 " degrees Fahrenheit colder then normal. ";
             $this->description = "[it's between 32 and -8 Fahrenheit 
                 (0 - -22 degrees Celsius) or lower]";
-            $this->Effect = $cs . "{DEFAULT DC10} or  $exh. 
-            (This does not apply if a creature has $res or $imm
+            $this->Effect = "[Constitution Saving Throw (DC " . rand(1, 20) . ")]
+            {DEFAULT DC10} or [Gain one level of Exhaustion]. 
+            (This does not apply if a creature has resistance or immunity
             to cold damage, wears cold weather gear, 
             or is adapted to cold climates). ";
         } else if ($temperatures >= 18) {
@@ -52,11 +48,14 @@ class Temperatures extends WeatherGenerator
                 (30 degrees Celsius) or hotter]";
             $this->Effect = "If creatures are exposed to the heat 
             and have no access to 
-            drinkable water they must: succeed on $cs {DEFAULT DC5} each hour. 
+            drinkable water they must: succeed on 
+            [Constitution Saving Throw (DC " . rand(1, 20) . ")] {DEFAULT DC5} 
+            each hour. 
             The DC is 5 for the first hour and increases by 1 each additional hour.
             Creatures in medium or heavy armor, or heavy clothing have Disadvantage
             on the Saving Throw.
-            Creatures with $res or $imm to fire damage or adapted to the climate 
+            Creatures with resistance or immunity 
+            to fire damage or adapted to the climate 
             automatically succeed on the Saving Throw. ";
         } else {
             $this->temperature = "normal for the season. ";

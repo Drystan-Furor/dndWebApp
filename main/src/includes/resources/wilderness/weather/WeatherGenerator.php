@@ -16,7 +16,7 @@ class WeatherGenerator
      */
     public function __construct()
     {
-        //$this->weather = self::_facialConstruction();
+        $this->weather = self::_weatherConstruction();
     }
 
     /**
@@ -67,19 +67,20 @@ class WeatherGenerator
      */
     private function _weatherConstruction()
     {
-        $wind = new Wind();
-        $this->wind = $wind->getWind();
-
-        $precipitation = new Precipitation();
-        $this->precipitation = $precipitation->getPrecipitation();
-
         $temperature = new Temperatures();
         $this->temperature = $temperature->getTemperature();
 
         $clouds = new Clouds();
         $this->clouds = $clouds->getClouds();
 
-        $weather = $this->temperature . 
+        $wind = new Wind();
+        $this->wind = $wind->getWind();
+
+        $precipitation = new Precipitation();
+        $this->precipitation = $precipitation->getPrecipitation();
+
+        $weather = $this->temperature . $this->clouds . 
+                $this->wind . $this->precipitation;
         //---- concat
 
         return $weather;
