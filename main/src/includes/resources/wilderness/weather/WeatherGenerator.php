@@ -69,6 +69,7 @@ class WeatherGenerator
     {
         $temperature = new Temperatures();
         $this->temperature = $temperature->getTemperature();
+        $this->temperatures = $temperature->getD20Temperatures();
 
         $clouds = new Clouds();
         $this->clouds = $clouds->getClouds();

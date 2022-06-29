@@ -18,16 +18,17 @@ class Temperatures extends WeatherGenerator
      */
     private function __construct()
     {
-        $this->temperature = self::_temperature();
+        $temperatures = self::_d20Temperatures();
+        $this->temperature = self::_temperature($temperatures);
     }
     /**
      * D20 temperature
      * 
      * @return string
      */
-    private function _temperature()
+    private function _temperature($temperatures)
     {
-        $temperatures = rand(1, 20);
+
 
         if ($temperatures >= 15 && $temperatures <= 17) {
             $d4times10 = rand(1, 4) * 10;
@@ -42,7 +43,7 @@ class Temperatures extends WeatherGenerator
             or is adapted to cold climates). ";
         } else if ($temperatures >= 18) {
             $d4times10 = rand(1, 4) * 10;
-            $this->temperature = $d4times10 . 
+            $this->temperature = $d4times10 .
                 " degrees Fahrenheit hotter then normal. ";
             $this->description = "[it's 86 Fahrenheit 
                 (30 degrees Celsius) or hotter]";
@@ -63,9 +64,21 @@ class Temperatures extends WeatherGenerator
                 (0 - 30 degrees Celsius)]";
             $this->Effect = "";
         }
-        $this->temperature .= $this->description . $this->Effect;
-        $this->temperature = "The temperature is " . $this->temperature;
-        return $this->temperature;
+        $temperature = $this->temperature . $this->description . $this->Effect;
+        $temperature = "The temperature is " . $temperature;
+        return $temperature;
+    }
+
+    /**
+     * Set the value of d20
+     * 
+     * @return string
+     */
+    private function _d20Temperatures()
+    {
+        $this->temperatures = rand(1, 20);
+
+        return $this->temperatures;
     }
 
     /**
@@ -76,5 +89,13 @@ class Temperatures extends WeatherGenerator
     public function getTemperature()
     {
         return $this->temperature;
+    }
+
+    /**
+     * Get the value of this
+     */
+    public function getD20Temperatures()
+    {
+        return $this->temperatures;
     }
 }
