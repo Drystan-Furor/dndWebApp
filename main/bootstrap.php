@@ -1,9 +1,10 @@
 <?php
 // Tonen van errors aanzetten.
+/*
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+*/
 /*
 // Automatisch laden van klassen.
 spl_autoload_register(function ($class) {
