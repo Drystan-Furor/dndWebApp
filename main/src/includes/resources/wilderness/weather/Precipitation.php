@@ -16,9 +16,9 @@ class Precipitation extends WeatherGenerator
      * 
      * @return string
      */
-    private function __construct()
+    private function __construct($temperatures)
     {
-        $this->precipitation = self::_defaultPrecipitation();
+        $this->precipitation = self::_defaultPrecipitation($temperatures);
     }
 
     /**
@@ -26,29 +26,31 @@ class Precipitation extends WeatherGenerator
      * 
      * @return string
      */
-    private function _defaultPrecipitation()
+    private function _defaultPrecipitation($temperatures)
     {
         //----------------------------- Precipitation 
         //d20
         $precipitations = rand(1, 20);
+        $downfalls = [
+            'rain', 
+        ];
 
-        if ($precipitations >= 13 && $precipitations <= 17) {
+        // if it's colder push array with snow
+        if ($temperatures >= 15 && $temperatures <= 17) {
+            $downfalls[] = 'snow';
+        }
+
+        $downfall = array_rand(array_flip($downfalls), 1);
+
+        if ($precipitations >= 13 && $precipitations <= 17 ) {
             //"Light rain or light snowfall";
-            $downfalls = [
-                'light rain', 'light snow',
-            ];
-            $downfall = array_rand(array_flip($downfalls), 1);
-            $precipitation = "Unfortunately a $downfall has begun to fall. ";
+            $precipitation = "Unfortunately a light $downfall has begun to fall. ";
             $Effect = "It makes your sight a bit blurry in the distance. 
             [-2 Passive Perception when relying on seeing] ";
             $precipitation .= $Effect;
         } else if ($precipitations >= 18) {
             //"Heavy rain or heavy snowfall";
-            $downfalls = [
-                'heavy rain', 'heavy snow',
-            ];
-            $downfall = array_rand(array_flip($downfalls), 1);
-            $precipitation = "Regrettably $downfall 
+            $precipitation = "Regrettably a heavy $downfall 
                         is beating down on you. ";
             $Effect = "The weather makes your surroundings lightly obscured. 
                 [-5 Passive Perception when relying on seeing] 

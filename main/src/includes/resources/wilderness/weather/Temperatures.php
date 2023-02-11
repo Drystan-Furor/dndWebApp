@@ -93,6 +93,8 @@ class Temperatures extends WeatherGenerator
 
     /**
      * Get the value of this
+     * 
+     * @return int
      */
     public function getD20Temperatures()
     {

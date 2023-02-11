@@ -77,7 +77,7 @@ class WeatherGenerator
         $wind = new Wind();
         $this->wind = $wind->getWind();
 
-        $precipitation = new Precipitation();
+        $precipitation = new Precipitation($this->temperatures);
         $this->precipitation = $precipitation->getPrecipitation();
 
         $weather = $this->temperature . $this->clouds . 
